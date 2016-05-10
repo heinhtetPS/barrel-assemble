@@ -12,6 +12,13 @@ var app = assemble();
 // expose your instance of assemble
 module.exports = app;
 
+/** Defines the "clean" task for Gulp. */
+
+app.task( "clean", function( cb ) {
+	var del = require( "del" );
+	return del([ "./dist/*.html", "./dist/**/*.{js,css,map,html}" ], cb );
+});
+
 /** Defines the "load" task for Gulp. */
 
 app.task( "load", function( cb ) {
@@ -23,26 +30,19 @@ app.task( "load", function( cb ) {
   cb();
 });
 
-/** Defines the "clean" task for Gulp. */
+/** Defines the "validate" task for Gulp. */
 
-app.task( "clean", function( cb ) {
-	var del = require( "del" );
-	return del([ "./dist/*.html", "./dist/**/*.{js,css,map,html}" ], cb );
-});
+app.task( "validate", [ "jshint", "jscs" ]);
 
 require( "./tasks/sass" );
 require( "./tasks/jscs" );
 require( "./tasks/jshint" );
 require( "./tasks/browserify" );
-/*require( "./tasks/vendors" );*/
+require( "./tasks/vendors" );
 
-/** Defines the "validate" task for Gulp. */
+/** Defines the "assemble" task for Gulp. */
 
-app.task( "validate", [ "jshint", "jscs" ]);
-
-/** Defines the "build" task for Gulp. */
-
-app.task( "build", [ "clean", "load", "sass", "browserify", "validate" ], function() {
+app.task( "assemble", [ "load" ], function() {
 	var extname = require( "gulp-extname" );
 
 	return app.toStream( "pages" )
@@ -51,16 +51,22 @@ app.task( "build", [ "clean", "load", "sass", "browserify", "validate" ], functi
 		.pipe( app.dest( "dist" ) );
 });
 
+/** Defines the "build" task for Gulp. */
+
+app.task( "build", [ "vendors", "clean", "assemble", "sass", "browserify" ] );
+
 /** Defines the "dev" task for Gulp. */
 
-app.task( "dev", [ /*"vendors",*/ "build", "sass", "browserify" ], function() {
+app.task( "dev", [ "build" ], function() {
 	var livereload = require( "gulp-livereload" );
 	var path = require( "path" );
+	var watch = require( "base-watch" );
 
   livereload.listen();
-
-	var watch = require( "base-watch" );
 	app.use( watch() );
+
+  // Watch templates
+  app.watch([ "./**/*.hbs" ], [ "assemble" ]);
 
   // Watch stylesheets
   app.watch([ "./**/*.scss" ], [ "sass" ]);

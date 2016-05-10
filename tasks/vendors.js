@@ -6,8 +6,10 @@ var vendorScripts = [
 	// place vendor scripts in this array
 ];
 
-app.task( "vendors", function() {
-	if ( vendorScripts.length > 0 ) {
+app.task( "vendors", function( cb ) {
+	if ( vendorScripts.length < 1 ) {
+		cb();
+	} else {
 		return app.src( vendorScripts )
 			.pipe( sourcemaps.init() )
 			.pipe( concat( "vendor.min.js" ) )

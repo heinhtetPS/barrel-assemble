@@ -7,13 +7,14 @@ module.exports = function( func, threshold, execAsap ) {
 		var obj = this, args = arguments;
 		function delayed () {
 			if ( !execAsap ) {
-				func.apply( obj, args );}
+				func.apply( obj, args );
+			}
 			timeout = null;
 		}
 
 		if ( timeout ) {
 			clearTimeout( timeout );
-		}else if ( execAsap ) {
+		} else if ( execAsap ) {
 			func.apply( obj, args );
 		}
 
