@@ -1,0 +1,191 @@
+.single {
+    .blog-post {
+        .article__content {
+            @media (min-width: break($s)) {
+                max-width: 530px;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            @media (min-width: break($m)) {
+                padding: 0 40px;
+            }
+            @media (min-width: break($mo)) {
+                max-width: 1128px;
+            }
+            @media (min-width: break($l)) {
+                padding: 0;
+            }
+            .container {
+                padding: 0;
+            }
+            .share-icons {
+                a {
+                    @media (min-width: break($s)) {
+                        font-size: 24px;
+                    }
+                    @media (min-width: break($mo)) {
+                        font-size: 28px;
+                    }
+                    @media (min-width: break($l)) {
+                        font-size: 35px;
+                    }
+                }
+            }
+        }
+    }
+    .gray-container {
+        margin-top: 0;
+    }
+    .main-wrapper {
+        background: $c-white;
+    }
+    .single-mobile {
+        display: block;
+        padding: 30px 0 15px;
+        @media (min-width: break($s)) {
+            padding: 40px 0;
+        }
+        section {
+            padding-left: 20px;
+            padding-right: 20px;
+            &:first-child {
+                border-bottom: 2px solid #f0f3f7;
+            }
+        }
+    }
+    .single-footer {
+        display: block;
+        float: none;
+        h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        @media (min-width: break($s)) {
+            h4 {
+                font-size: 26px;
+                margin-bottom: 35px;
+            }
+        }
+        @media (min-width: break($mo)) {
+            display: none;
+            float: left;
+            h4 {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+    /*.container {
+        max-width: $container-width;
+    }*/
+    .content-header {
+        .author-date {
+            margin-bottom: 0;
+        }
+    }
+    .blog-feature-image {
+        min-height: 300px;
+        position: relative;
+        margin-top: 40px;
+        @media (min-width: break($mo)) {
+            min-height: 430px;
+        }
+        @media (min-width: break($l)) {
+            min-height: 550px;
+        }
+        figcaption {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: -30px;
+            left: 0;
+        }
+    }
+    .single-featured-image {
+        position: relative;
+        img {
+            width: 100%;
+        }
+    }
+    .post-content {
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        @media (min-width: break($mo)) {
+            width: calc(100% - 467px);
+        }
+    }
+    aside {
+        display: none;
+        margin-left: 0;
+        width: 387px;
+        @media (min-width: break($mo)) {
+            margin-left: 80px;
+            display: block;
+        }
+    }
+    aside.fixed {
+        position: fixed;
+    }
+    aside.bottom {
+        position: absolute !important;
+        bottom: 0;
+        top: auto !important;
+    }
+    .now-trending {
+        float: none;
+        @media (min-width: break($mo)) {
+            float: left;
+        }
+    }
+    .more-categories {
+        float: none;
+        @media (min-width: break($mo)) {
+            float: left;
+        }
+        h4 {
+            margin-bottom: 5px;
+        }
+        @media (min-width: break($s)) {
+            h4 {
+                font-size: 26px;
+                margin-bottom: 15px;
+            }
+        }
+        @media (min-width: break($mo)) {
+            float: left;
+            h4 {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .blocks {
+        .bg-image-container {
+            position: relative;
+            > a {
+                background-size: cover;
+                height: 170px;
+                padding: 0;
+                width: 100%;
+                @media (min-width: break($m)) {
+                    height: 214px;
+                }
+            }
+        }
+        &:before {
+            padding: 0;
+        }
+    }
+    .footer__container {
+        @media (min-width: break($s)) {
+            padding-top: 10px;
+        }
+        @media (min-width: break($m)) {
+            padding-top: 30px;
+        }
+        @media (min-width: break($mo)) {
+            padding-top: 0;
+        }
+    }
+}

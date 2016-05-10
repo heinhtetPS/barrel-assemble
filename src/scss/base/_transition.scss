@@ -1,0 +1,34 @@
+.trans {
+    transition-duration: $transition-duration;
+    transition-timing-function: $transition-timing-function;
+}
+
+.no-trans {
+    transition-duration: 0 !important;
+}
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+.notransition {
+    @include transition(none !important);
+}
+
+@each $prop in all,
+height,
+opacity,
+color,
+background-color,
+border-color,
+transform,
+top,
+padding {
+    .trans-#{$prop} {
+        @extend .trans;
+        transition-property: $prop;
+    }
+}

@@ -1,0 +1,67 @@
+.carousel-module {
+    position: relative;
+    .slick-arrow {
+        @extend .button--primary;
+        padding: 13px 13px 13px 7px;
+        text-align: center;
+    }
+    .carousel--arrow {
+        border: 2px solid $c-light-blue;
+        display: none;
+        width: 45px;
+        height: 45px;
+        color: $c-light-blue;
+        padding: 10px;
+        line-height: 22px;
+        top: 50%;
+        position: absolute;
+        z-index: 9999;
+        margin-top: -22.5px !important;
+        &:after {
+            margin-top: -10px;
+        }
+        @media (min-width: break($m)) {
+            display: inline-block !important;
+        }
+        @media (min-width: break($l)) {
+            display: inline-block !important;
+        }
+    }
+    .carousel--left-arrow {
+        left: 0;
+        &:after {
+            content: "\f177" !important;
+            left: 12px;
+        }
+    }
+    .carousel--right-arrow {
+        right: 0;
+        &:after {
+            content: "\f178" !important;
+            right: 12px;
+        }
+    }
+    .slick-slide {
+        outline: none;
+        @media (min-width: break($mo)) {
+            padding: 0;
+        }
+        article {
+            @include flex(1);
+            margin: 0 !important;
+            @media (min-width: break($s)) {
+                margin: 0 10px !important;
+            }
+            @media (min-width: break($l)) {
+                margin: 0 12.5px !important;
+            }
+            .bg-image {
+                @include flexbox-display-flex;
+                @include flex-direction(column);
+                @include flex-justify-content(flex-end);
+                padding-bottom: $padding;
+                position: relative;
+            }
+        }
+    }
+}

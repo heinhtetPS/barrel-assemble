@@ -1,0 +1,171 @@
+.footer {
+    background: $c-white;
+    border-top: 2px solid $c-light-gray;
+}
+
+.footer__container {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: $padding;
+    background: $c-white;
+    @media (min-width: break($footer-break)) {
+        padding-top: 0px;
+    }
+    @media (min-width: break($m)) {
+        padding-bottom: $padding * 2;
+    }
+}
+
+/* Gravity Form CSS override 
+** -----------------------------------------------------------------*/
+.footer__container {
+    padding-top: $padding * 2;
+    @media (min-width: break($m)) {
+        padding-top: 0;
+    }
+    @media (min-width: break($footer-break)) {
+        .gform_wrapper {
+            margin-bottom: 10px;
+        }
+        .gform_body {
+            width: auto;
+            display: inline-block;
+        }
+        .gform_fields {
+            margin: 0 -10px;
+        }
+        .gfield {
+            padding: 0 10px;
+            display: inline-block;
+            width: 220px;
+        }
+        .gform_footer {
+            display: inline-block;
+            width: auto;
+            padding-left: 20px;
+        }
+        .gform_wrapper label.gfield_label+div.ginput_container {
+            margin-bottom: 0;
+        }
+        h3.gform_title {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.footer__social {
+    margin-top: 40px;
+    @media (min-width: break($footer-break)) {
+        display: inline-block;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+/* -----------------------------------------------------------------
+** Gravity Form CSS override END */
+
+.footer__menu {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 1em;
+    @media (min-width: break($footer-break)) {
+        text-align: center;
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    a {
+        @extend %h6;
+        color: $c-gray;
+        text-decoration: none;
+        height: auto;
+        padding: 0;
+        border: none;
+        line-height: 1;
+        display: inline-block;
+        border-bottom: 2px solid $c-white;
+        &:hover {
+            color: $c-dark-blue;
+        }
+    }
+    .nav__item.current_page_item a,
+    .nav__item.current_page_parent a,
+    .nav__item.current-menu-item a {
+        color: #4F4F4F !important;
+        background-color: #fff !important;
+    }
+}
+
+.secondary-footer__menu {
+
+ 	@media (max-width: break($s)) {
+		 margin-top:40px;
+	}
+}
+
+.subscribe + .footer__menu {
+    padding-top: 40px;
+}
+
+.footer__menu-item {
+    @media (min-width: break($footer-break)) {
+        display: inline-block;
+        margin: 0 20px;
+    }
+}
+
+.footer__menu-item + .footer__menu-item {
+    margin-top: $padding * 2;
+}
+
+.footer_copyright {
+    margin-top: $padding * 2;
+    font-size: 12px;
+    color: #848484;
+    @media (min-width: break($m)) {
+        margin-top: $padding;
+        font-size: 14px;
+    }
+    li,
+    span {
+        display: inline-block;
+        color: $c-lighter-gray;
+        font-size: 12px;
+        letter-spacing: .03em;
+        @media (min-width: break($m)) {
+            font-size: 14px;
+        }
+    }
+    p {
+        color: $c-light-gray;
+        text-transform: none;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        font-weight: 400;
+    }
+    a {
+        font-size: 12px;
+        color: #848484;
+        @media (min-width: break($m)) {
+            font-size: 14px;
+        }
+        &:hover {
+            color: $c-gray; 
+        }
+    }
+    .pipe {
+        margin: 0 5px;
+    }
+}
+
+.subscribe__title {
+    @extend %h4;
+}
+
+.subscribe__intro {
+    margin-top: 12px;
+}
+
+.subscribe__cta {
+    margin-top: 20px;
+}

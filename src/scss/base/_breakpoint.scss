@@ -1,0 +1,34 @@
+@function em($value) {
+    @if ($value/1)==$value {
+        @if (unit($value)=='px') {
+            $unitless_value: $value/1px;
+            @return ($unitless_value/16)*1em;
+        }
+        @else if (unit($value)=='pt') {
+            $unitless_value: $value/1pt;
+            @return ($unitless_value/16)*1em;
+        }
+        @else {
+            @return ($value/16)*1em;
+        }
+    }
+    @warn "em(#{$value}) is not a number.";
+    @return null;
+}
+
+@function break($breakpoint, $min-width: true, $min-height: true) {
+    @if ($min-width==false) {
+        @return em($breakpoint);
+    }
+    @else {
+        @return em($breakpoint + 1);
+    }
+    @if ($min-height==false) {
+        @return em($breakpoint);
+    }
+    @else {
+        @return em($breakpoint + 1);
+    }
+    @warn "#{$breakpoint} in function break(#{$breakpoint}) does not exist.";
+    @return 'Check your break() declaration.';
+}

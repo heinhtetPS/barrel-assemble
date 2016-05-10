@@ -1,0 +1,12 @@
+{
+  "title": "Nighthawk<sup>®</sup><strong>X4S</strong>",
+  "root": "http://localhost/barrel-base-assemble/dist",
+  "description": "",
+  "logo": "/landings/R7800gaming/assets/images/logo.svg",
+  "logo_alt": "NETGEAR Nighthawk X4S",
+  "copyright": "&copy; 2016 NETGEAR<sup>®</sup>. All rights reserved.",
+  "footer_cta": {
+    "url": "http://netgear.com",
+    "title": "Visit NETGEAR.com"
+  }
+}

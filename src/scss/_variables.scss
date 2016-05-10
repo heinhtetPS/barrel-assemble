@@ -1,0 +1,104 @@
+/* Breakpoints 
+** -----------------------------------------------------------------*/
+$xs: 490;
+$s: 650;
+$m: 800;
+$mo: 990;
+$ml: 1034;
+$l: 1280;
+$xl: 1420;
+$xxl: 1930;
+$breakpoints: $xs $s $m $mo $ml $l $xl $xxl;
+
+/* Colors 
+** -----------------------------------------------------------------*/
+$c-black: #000000;
+$c-white: #FFFFFF;
+$c-green: #08A842;
+$c-dark-green: #009135;
+$c-bright-blue: #2F99F2;
+$c-light-blue: #499FE7;
+$c-dark-blue: #3683C2;
+$c-heavy-blue: #2F70A5;
+$c-gray-chateau: #A5A5A5;
+$c-gray: #454545;
+$c-lighter-gray:#848484;
+$c-light-gray: #F0F3F7;
+$c-bg-gray: #F0F3F7;
+$c-red: #ED4D5A;
+$c-border: #B8B5C1; 
+$c-hr: #E9EDF2;
+$c-border-gray: #E9EDF2;
+$c-border-blue: #2a77b3;
+$c-nav-border-blue: #3781c0;
+$c-featured: #FCF8F5;
+$c-main-nav-bg:#3A8BCE;
+
+/* Fonts 
+** -----------------------------------------------------------------*/
+$f-sans: Helvetica, Arial, sans-serif;
+$f-serif: "Times New Roman", Times, serif;
+$ff-intro-bold: "adelle-sans";
+$ff-intro-book: "adelle-sans";
+$ff-intro-regular: "adelle-sans";
+$ff-freight-text: "freight-text-pro";
+$ff-adelle: "adelle-sans", $f-sans;
+$ff-adelle-regular: 400, $ff-adelle;
+$ff-adelle-bold: $ff-adelle;
+
+/* Transitions 
+** -----------------------------------------------------------------*/
+$transition-duration: 0.2s;
+$transition-timing-function: ease-in-out;
+$speed: .3s;
+
+/* Header 
+** -----------------------------------------------------------------*/
+$top-bar-height: 40px;
+$header-height: 80px;
+$header-height-desktop: 80px;
+$header-height-condensed: 80px;
+$header-breakpoint: $m;
+$header-gutter: 20px;
+$header-gutter-desktop: 30px;
+$logo-width: 120px;
+$logo-height: 41px;
+$logo-width-desktop: 118px;
+$logo-height-desktop: 84px;
+$logo-width-condensed: 150px;
+$logo-height-condensed: 41px;
+
+/* Footer 
+** -----------------------------------------------------------------*/
+$footer-break: $s;
+
+/* Container 
+** -----------------------------------------------------------------*/
+$container-breakpoint: $xl;
+$container-width: 1128px;
+$container-main-width: 1368px;
+$container-max-width: 1440px;
+$edge-gutter: 15px;
+$edge-gutter-tablet: 40px;
+$edge-gutter-desktop: 60px;
+$edge-padding: 40px;
+$padding:20px;
+$t-vertical-spacing:20px;
+$t-horiztonal-spacing:30px;
+
+/* Navigation 
+** -----------------------------------------------------------------*/
+$nav-breakpoint: $s;
+$nav-trigger-height: 16px;
+
+/* Hero 
+** -----------------------------------------------------------------*/
+$hero-height: 150px;
+$hero-height-desktop: 600px;
+$hero-height-home: 480px;
+$hero-height-home-desktop: 730px;
+$hero-breakpoint: $m;
+
+/* Hello Bar 
+** -----------------------------------------------------------------*/
+$hello-bar-breakpoint: $s;

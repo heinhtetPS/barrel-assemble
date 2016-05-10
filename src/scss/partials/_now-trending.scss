@@ -1,0 +1,71 @@
+.now-trending {
+    padding-bottom: 40px;
+    width: 100%;
+    @media (min-width: break($s)) {
+        padding-bottom: 50px;
+    }
+    @media (min-width: break($m)) {
+        float: left;
+    }
+    h4 {
+        margin-bottom: 25px;
+        text-align: center;
+        margin-top: 0;
+    }
+    li {
+        @extend %cfx;
+        margin-bottom: $padding;
+        padding-bottom: $padding;
+        line-height: 1.2 !important;
+        display: block;
+        width: 100%;
+        border-bottom: 2px solid #f0f3f7;
+        @include flex-wrap(wrap);
+        @media (min-width: break($m)) {
+            line-height: 1 !important;
+        }
+        div {
+            @include flex(1);
+            margin-left: 73px;
+            @media (min-width: break($m)) {
+                margin-left: 0;
+            }
+        }
+    }
+    li:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+    .now-trending-image {
+        width: 53px;
+        height: 32px;
+        float: left;
+        @include flex(0 0 53px);
+        margin-right: $padding;
+        @media (min-width: break($s)) {
+            width: 150px;
+            height: 88px;
+        }
+        @media (min-width: break($m)) {
+            width: 5em;
+            height: 66px;
+            @include flex(0 0 5em);
+        }
+        @media (min-width: break($l)) {
+            width: 5em;
+            height: 66px;
+            @include flex(0 0 5em);
+        }
+    }
+    a,
+    .headline-intro {
+        @extend %aside-a;
+    }
+    .headline-intro {
+        font-size: 12px;
+        color: $c-light-blue;
+        text-align: left;
+        margin-bottom: $padding/4;
+    }
+}

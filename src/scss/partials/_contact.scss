@@ -1,0 +1,29 @@
+.page-template-contact {
+    .gform_wrapper {
+        max-width: 700px;
+    }
+}
+
+.contact-content {
+    margin-top: 30px;
+}
+
+.contact__footer {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.18px;
+    margin-top: 40px;
+}
+
+.contact__bottom-text {
+    padding-top: 20px;
+    border-top: 1px solid $c-gray;
+    text-align: center;
+    margin-bottom: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    @media (min-width: break($s)) {
+        text-align: left;
+    }
+}

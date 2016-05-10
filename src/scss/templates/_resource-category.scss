@@ -1,0 +1,333 @@
+.resource-category-container {
+    @include flexbox-display-flex;
+    @include flex-wrap(wrap);
+    @include flex-align-items(stretch);
+    .category-number {
+        line-height: 1;
+        font-size: 80px;
+        margin-bottom: $padding/2;
+        @media (min-width: break($xs)) {
+            font-size: 50px;
+        }
+        @media (min-width: break($m)) {
+            font-size: 60px;
+        }
+        @media (min-width: break($mo)) {
+            font-size: 80px;
+        }
+        @media (min-width: break($l)) {
+            font-size: 110px;
+        }
+    }
+}
+
+.page-template-resources {
+    .main-wrapper,
+    .main-wrapper:after {
+        background: #fff;
+        .container {
+            max-width: 1207px;
+            .overlay-content {
+                text-align: center;
+            }
+        }
+    }
+    .article {
+        padding-bottom: $padding;
+        @media (min-width: break($m)) {
+            padding-bottom: 50px;
+        }
+    }
+    .overlay-background {
+        display: none;
+    }
+}
+
+.resource-landing {
+    &>h1 {
+        color: $c-light-blue;
+        margin-bottom: $padding * 2;
+    }
+}
+
+.resource-category {
+    @include flex(1 0 100%);
+    @include flex-align-items(center);
+    @include flex-direction(column);
+    @include flex-flow(row wrap);
+    @include flex-justify-content(center);
+    @include flex-wrap(wrap);
+    @include flexbox-display-flex;
+    background-color: $c-white;
+    cursor: pointer;
+    margin: 0 0 10px 0;
+    position: relative;
+    @media (min-width: break($xs)) {
+        @include flex(1);
+        margin: 0 0 20px 20px;
+    }
+    @media (min-width: break($mo)) {
+        margin: 0 0 25px 25px;
+    }
+    &:first-child {
+        @media (min-width: break($xs)) {
+            margin: 0 0 20px;
+        }
+        @media (min-width: break($mo)) {
+            margin: 0 0 25px;
+        }
+    }
+    &:before {
+        display: block;
+        content: "";
+        padding-top: 100%;
+        width: 100%;
+    }
+    h2 {
+        font-size: 30px;
+        margin-bottom: 25px;
+        white-space: nowrap;
+        @media (min-width: break($xs)) {
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+        @media (min-width: break($m)) {
+            font-size: 30px;
+        }
+        @media (min-width: break($mo)) {
+            font-size: 33px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: break($l)) {
+            font-size: 40px;
+        }
+    }
+    img {
+        width: 100%;
+    }
+    .overlay {
+        @include flexbox-display-flex;
+        @include flex-direction(column);
+        @include flex(1);
+        @include flex-justify-content(center);
+        left: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        .overlay-content {
+            padding: 0 20px;
+            @media (min-width: break($xs)) {
+                padding: 0;
+            }
+            /*padding: 20% 20px;
+            @media (min-width: break($m)) {
+                padding: 25% 20px;
+            }*/
+            position: relative;
+            width: 100%;
+            .button--primary {
+                width: 100%;
+                @media (min-width: break($xs)) {
+                    width: auto;
+                }
+            }
+        }
+    }
+    .block {
+        @include flexbox-display-flex;
+        @include flex-direction(column);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        img {
+            display: none;
+        }
+        a {
+            @include flex(1 1 50%);
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+    &.overlay--black {
+        &:hover {
+            &:after {
+                @include opacity(.5);
+            }
+        }
+    }
+}
+
+.page-template-resource-category {
+    .content-header__holder {
+        h1 {
+            color: $c-gray;
+        }
+    }
+    .article {
+        padding-bottom: 0;
+    }
+    .resource-category {
+        @include flex(1 0 100%);
+        padding: 0;
+        min-height: auto;
+        @media (min-width: break($xs)) {
+            @include flex(0 1 calc(50% - 25px));
+            margin: 0 12.25px 25px 12.25px;
+        }
+        @media (min-width: break($m)) {
+            @include flex(0 1 calc(33.333% - 25px));
+        }
+        &:before {
+            content: "";
+            padding-top: 100%;
+            float: left;
+        }
+    }
+}
+
+.bg-image-container {
+    .overlay--black {
+        &:hover {
+            &:after {
+                @include opacity(.5);
+            }
+        }
+    }
+}
+
+.resource-landing {
+    .resource-category {
+        background-color: $c-light-blue;
+        .category-number,
+        h2 a {
+            color: $c-white;
+        }
+    }
+}
+
+.bottom-description {
+    padding: 40px 40px 60px 40px;
+    background-color: $c-white;
+    color: $c-light-blue;
+    width: 100%;
+    flex: 1;
+    text-align: left;
+    margin-top: -5px;
+    a {
+        @extend h4;
+        font-weight: bold;
+    }
+}
+
+.resource-category-top-tier {
+    @media (min-width: break($xs)) {
+        @include flex-wrap(wrap);
+    }
+    @media (min-width: break($m)) {
+        @include flex-wrap(nowrap);
+    }
+    .resource-category {
+        @include flex(1 1 100%);
+        @media (min-width: break($xs)) {
+            @include flex(1);
+        }
+        &:last-child {
+            @include flex(1);
+            @media (min-width: break($xs)) {
+                @include flex(1 1 100%);
+                margin-left: 0;
+            }
+            @media (min-width: break($m)) {
+                @include flex(1);
+                margin-left: 20px;
+            }
+            @media (min-width: break($mo)) {
+                margin-left: 25px;
+            }
+            &:before {
+                @media (min-width: break($xs)) {
+                    padding-top: (340 / 920) * 100%;
+                }
+            }
+        }
+        &:before {
+            @media (min-width: break($s)) {
+                padding-top: (415 / 359) * 100%;
+            }
+        }
+    }
+}
+
+.resource-category-bottom-tier {
+    h1 {
+        color: $c-white;
+        margin-bottom: $padding * 2;
+        font-size: 33px;
+        line-height: 1.2;
+        margin-bottom: 25px;
+        @media (min-width: break($xs)) {
+            font-size: 24px;
+            line-height: 1;
+        }
+        @media (min-width: break($m)) {
+            font-size: 33px;
+        }
+        @media (min-width: break($mo)) {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: break($l)) {
+            font-size: 64px;
+        }
+        a {
+            color: $c-white;
+        }
+    }
+    .resource-category {
+        /*.overlay {
+            .overlay-content {
+                padding-top: 25%;
+                @media (min-width: break($s)) {
+                    padding-top: 22.5%;
+                }
+            }
+        }*/
+        &:before {
+            @media (min-width: break($xs)) {
+                padding-top: (415 / 550) * 100%;
+            }
+        }
+        &:last-child {
+            @include flex(1 1 100%);
+            margin-left: 0;
+            &:before {
+                @media (min-width: break($xs)) {
+                    padding-top: (340 / 920) * 100%;
+                }
+            }
+            /*.overlay {
+                .overlay-content {
+                    @media (min-width: break($s)) {
+                        padding-top: 9%;
+                    }
+                    @media (min-width: break($mo)) {
+                        padding-top: 12%;
+                    }
+                }
+            }*/
+        }
+    }
+}
+
+.resource-category-container.full-tier {
+    .resource-category {
+        @include flex(1 0 100%);
+        margin: 0 0 $padding 0;
+        @media (min-width: break($m)) {
+            margin: 0 12.25px 25px 12.25px;
+        }
+    }
+}

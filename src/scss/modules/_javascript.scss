@@ -1,0 +1,62 @@
+.js-transparent {
+    opacity: 0;
+}
+
+.js-transition-all {
+    @extend .trans-all;
+}
+
+.js-overlay,
+.js-form-modal-overlay {
+    @extend %overlay;
+}
+
+.js-youtube-modal-active .js-overlay,
+.js-form-modal-active .js-form-modal-overlay {
+    @extend %overlay-active;
+    z-index: 11000;
+}
+
+.js-youtube-modal {
+    @extend .trans-all;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: $edge-gutter;
+    right: $edge-gutter;
+    z-index: 12000;
+    text-align: center;
+    @media (min-width: break($ml)) {
+        width: 800px;
+        left: 50%;
+        right: initial;
+        transform: translate(-50%, -50%);
+    }
+    .fa {
+        margin-right: 5px;
+    }
+}
+
+.js-youtube-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-bottom: 10px;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.js-youtube-modal-active {
+    .js-youtube-modal {
+        visibility: visible;
+        opacity: 1;
+    }
+}

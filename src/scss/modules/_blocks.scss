@@ -1,0 +1,265 @@
+.blocks {
+    width: 100%;
+    .blocks-container {
+        @include flexbox-display-flex;
+        @include flex-flow(row);
+        @include flex-justify-content(center);
+        @include flex-wrap(wrap);
+        width: 100%;
+        article:hover {
+            .overlay {
+                display: block;
+            }
+        }
+    }
+    h2 {
+        margin-bottom: ($padding * 2);
+        text-align: center;
+        font-weight: bold;
+    }
+    article:before {
+        content: '';
+        float: left;
+        padding-top: 100%;
+    }
+    article {
+        color: white;
+        background-color: $c-white;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 25px;
+        align-content: center;
+        text-align: center;
+        @extend .bg-image;
+        @include flex( 0 1 100%); 
+        height: auto;
+        position: relative;
+        @media (min-width: break($m)) {
+            margin: 0 0 0 24px;
+            @include flex( 0 0 calc(33.333% - 16px));
+        }
+        text-align: center;
+        a {
+            text-transform: none;
+        }
+        .button--primary {
+            text-transform: uppercase;
+        }
+        .bg-image-container {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include flexbox-display-flex;
+            @include flex-direction(column);
+        }
+        .bg-image {
+            width: 100%;
+            @include flex(6 1 auto);
+            height: 50%;
+            background-color: #fff;
+        }
+        .date {
+            font-size: 14px;
+            color: $c-gray;
+        }
+    }
+    article:first-child {
+        margin-left: 0;
+    }
+    article:nth-child(4) {
+        margin-left: 0;
+    }
+    .design-thinking {
+        background-image: url(../img/design-thinking-bg.jpg);
+    }
+    .digital-literacy {
+        background-image: url(../img/digital-literacy-bg.jpg);
+    }
+    .event-recap {
+        h4 {
+            margin-bottom: 10px;
+        }
+        .home-container {
+            padding-bottom: ($padding * 2);
+        }
+    }
+    .twitter-block {
+        @include flex-direction(column);
+        background-color: $c-white;
+        background-image: url(../img/twitter-bg.gif);
+        background-size: cover;
+        color: $c-gray;
+        .fa-twitter {
+            color: $c-light-blue;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5em;
+            text-align: center;
+        }
+        a {
+            &:hover {
+                color: $c-dark-blue;
+            }
+        }
+        h4 {
+            color: $c-gray;
+            margin-bottom: 10px;
+            a {
+                color: $c-gray;
+            }
+        }
+    }
+    .bottom-description {
+        font-size: 14px;
+        background: $c-white;
+        color: $c-light-blue;
+        padding: 20px;
+        @include flexbox-display-flex;
+        @include flex-direction(column);
+        @include flex-justify-content(flex-start);
+        @include flex(1 0 auto);
+        position: relative;
+        @media (min-width: break($s)) {
+            padding: 25px 30px 40px 30px;
+        }
+        @media (min-width: break($l)) {
+            padding: 25px 30px 50px 30px;
+        }
+        p {
+            color: $c-gray;
+            text-align: left;
+        }
+        h4 {
+            @extend %h4;
+            margin: $padding/2 0 $padding/2 0;
+            text-align: left;
+            text-transform: none;
+            @media (min-width: break($m)) {
+                margin: $padding 0 $padding/2;
+            }
+        }
+        a {
+            font-size: 16px;
+            line-height: 24px;
+            color: $c-gray;
+            &:hover {
+                color: $c-dark-blue;
+            }
+            @media (min-width: break($s)) {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+.blocks {
+    .bg-image-block {
+        .block {
+            .bg-image {
+                width: 100%;
+                @include flex(1 1 auto);
+                height: 100%;
+                background-color: #fff;
+                &:after {
+                    background-color: #000;
+                }
+                div {
+                    @include flexbox-display-flex;
+                    @include flex-direction(column);
+                    @include flex-justify-content(center);
+                    height: 100%;
+                    padding: $padding;
+                }
+                h3 a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.section--gray-background article {
+    background: $c-light-gray;
+}
+
+.block-center {
+    @include flexbox-display-flex;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include flex-justify-content(center);
+    @include flex-direction(column);
+    padding: 20px;
+    width: 100%;
+    @media (min-width: break($s)) {
+        padding: 40px;
+    }
+    * {
+        text-align: center;
+    }
+    h3 {
+        margin-bottom: 10px;
+    }
+    .button--primary {
+        margin-top: 35px;
+    }
+}
+
+.overlay-link-container:hover {
+	.overlay-link {
+		width:100% !important;
+		z-index:9999;
+	}
+}
+
+.overlay-link {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+
+article.article-full-bleed {
+    background-color: #fff;
+    padding: 0;
+}
+
+.overlay--black {
+    h1,
+    h2,
+    h3 {
+        color: $c-white;
+        a {
+            color: $c-white;
+        }
+    }
+}
+
+.single .event-recap {
+    padding: 0;
+    .home-description {
+        background: $c-white;
+        color: $c-light-blue;
+        padding: $t-horiztonal-spacing;
+        padding-top: ($padding * 2);
+        padding-bottom: ($padding * 2);
+        position: relative;
+        p {
+            color: $c-gray;
+            text-align: left;
+        }
+        h4,
+        a {
+            color: $c-gray;
+            text-align: left;
+        }
+    }
+}

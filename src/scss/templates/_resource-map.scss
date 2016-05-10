@@ -1,0 +1,261 @@
+.page-template-resource-map {
+	background:#fff;
+	
+	.main-wrapper {
+		background:#fff;
+		
+		.map-container {
+			height:80vh;
+			background-color:#f0f3f7;
+			margin:70px 0;
+			
+		    @media (max-width: break(994px)) {
+				height:60vh;
+				margin:70px 0;
+		    }
+			
+		    @media (max-width: break(700px)) {
+			    height: 50vh;
+				margin:35px 0 20px 0;
+		    }
+			
+			.map {
+				background-image:url(../img/eship_map.png);
+				background-size:contain;
+				
+				background-position:center center;
+				background-repeat:no-repeat;
+				background-color:#f0f3f7;
+		        width:calc(80vh * 1.41797);
+				height:80vh;
+				margin:0 auto;
+				left: 50%;
+				margin-left: calc(-1 * 40vh * 1.41797);
+				position: absolute;
+				
+			    @media (max-width: break(994px)) {
+			        width:calc(60vh * 1.41797);
+					height:60vh;
+					margin-left: calc(-1 * 30vh * 1.41797);
+			    }
+				
+			    @media (max-width: break(700px)) {
+				    width:calc(50vh * 1.41797);
+				    height: 50vh;
+				    margin-left: calc(-1 * 20vh * 1.41797);
+			    }
+				
+				.map-caption {
+					background:#499FE7;
+					@extend %p.regular;
+					color:#fff;
+				    padding: .5em 1em;
+				    margin-top: -3.5em;
+					position:absolute;
+					left:-100px;
+					top:-100px;
+					display:none;
+					margin-left:.4em;
+					
+					&:after {
+						content:' ';
+						width: 0; 
+						height: 0; 
+						border-left: 14px solid transparent;
+						border-right: 14px solid transparent;
+						border-top: 18px solid #499FE7;
+						left:50%;
+						margin-left:-15px;
+						bottom:0;
+						margin-bottom:-10px;
+						position:absolute;
+					}
+					
+					&.left-aligned {
+						margin-left:0;
+						
+						&:after {
+							left:15px;
+						}
+					}
+					
+					&.right-aligned {
+						margin-left:0;
+						
+						&:after {
+							right:15px;
+						}
+					}
+				}
+			
+				.map-circles {
+		
+					position:absolute;
+					height:80vh;
+					@include opacity(.5);
+					width:calc(80vh * 1.41797);
+					margin:0 auto;
+					left:50%;
+					margin-left: calc(-1 * 40vh * 1.41797);
+					
+				    @media (max-width: break(994px)) {
+						height:60vh;
+				        width:calc(60vh * 1.41797);
+						margin-left: calc(-1 * 30vh * 1.41797);
+				    }
+				
+				    @media (max-width: break(700px)) {
+						height:50vh;
+				        width:calc(50vh * 1.41797);
+						margin-left: calc(-1 * 25vh * 1.41797);
+				    }
+				
+					.circle {
+						position:absolute;
+					    width: 34px;
+					    height: 34px;
+						border-radius: 10em;
+				
+						
+					    @media (max-width: break(994px)) {
+						    width: 28px;
+						    height: 28px;
+					    }
+				
+					    @media (max-width: break(700px)) {
+						    width: 23px;
+						    height: 23px;
+					    }
+						
+					   
+					}
+				
+					#circle-1 { 
+					    top: 50.3%;
+					    left: 38.7%;
+					}
+					
+					#circle-2 { 
+						top: 50%;
+						left: 17%;
+					}
+					
+					#circle-3 { 
+					    top: 9.5%;
+					    left: 37%;
+					}
+					
+					#circle-4 { 
+					    top: 20%;
+					    left: 47%;
+					}
+					
+					#circle-5 { 
+					    top: 29%;
+					    left: 38.5%;
+					}
+					
+					#circle-6 { 
+					    top: 36%;
+					    left: 38.5%;
+					}
+					
+					#circle-7 { 
+					    left: 29.5%;
+					    top: 62.5%;
+					}
+					
+					#circle-8 { 
+					    top: 84%;
+					    left: 30.8%;
+					}
+					
+					#circle-9 { 
+					    top: 70.2%;
+					    left: 30.8%;
+					}
+					
+					#circle-10 { 
+						top: 56.2%;
+						    left: 60%;
+					}
+					
+					#circle-11 { 
+					    top: 70.2%;
+					    left: 47.7%;
+					}
+					
+					#circle-12 { 
+					    top: 80.4%;
+					    left: 51.8%;
+					}
+					
+					#circle-13 { 
+					    top: 43.5%;
+					    left: 55.9%;
+					}
+					
+					#circle-14 { 
+						top: 48.3%;
+						    left: 62%;
+					}
+					
+					#circle-15 { 
+					    top: 33%;
+					    left: 34.5%;
+					}
+					
+					#circle-16 { 
+						top: 12%;
+						left: 26.3%;
+					}
+					
+					#circle-17 { 
+					    top: 43.5%;
+					    left: 51.8%;
+					}
+				}
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	/*
+	.main-wrapper {
+		margin-top:58px;
+		
+        @media (min-width: break($s)) {
+            margin-top:58px;
+        }
+		
+        @media (min-width: break($m)) {
+            margin-top:98px;
+        }
+		
+        @media (min-width: break($mo)) {
+            margin-top:123px;
+        }
+		
+        @media (min-width: break($l)) {
+            margin-top:123px;
+        }
+		
+		.article {
+			padding-top:0;
+			
+			.map {
+				height:80%;
+	
+				.map-circle {
+					border-radius:3em;
+				}
+			}
+		}
+		
+	}
+	*/
+}
+

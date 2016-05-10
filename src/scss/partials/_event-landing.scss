@@ -1,0 +1,142 @@
+.page-template-events {
+    .article {
+        padding-bottom: 0;
+        @media (min-width: break($s)) {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.featured-event-collection {
+    background-color: $c-featured;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    @media (min-width: break($s)) {
+        margin-top: 40px;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+}
+
+.event-collection {
+    padding-top: 40px;
+    @media (min-width: break($s)) {
+        padding-top: 70px;
+    }
+}
+
+.featured-event-collection,
+.event-collection {
+    .container {
+        max-width: 1060px;
+    }
+}
+
+.event-item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @media (min-width: break($s)) {
+        padding-top: 30px;
+    }
+}
+
+.event-item__date {
+    display: none;
+    @media (min-width: break($ml)) {
+        width: calc(10% - 30px);
+        margin-right: 30px;
+    }
+    .month,
+    .day {
+        display: block;
+        text-align: center;
+    }
+    .month {
+        @extend %ff-dawning;
+        font-size: 35px;
+        line-height: 41px;
+    }
+    .day {
+        @extend %ff-dkp;
+        font-size: 50px;
+        line-height: 60px;
+    }
+}
+
+.event-item__image {
+    @extend .bg-cover,
+    .as;
+    @include aspect_ratio( 6/4);
+    @media (min-width: break($ml)) {
+        width: calc(50% - 30px);
+        @include aspect_ratio( 2 * 6 / 4);
+        margin-right: 30px;
+    }
+}
+
+.event-item__container {
+    @media (min-width: break($ml)) {
+        width: 40%;
+    }
+}
+
+.event-item__date,
+.event-item__image,
+.event-item__container {
+    @media (min-width: break($ml)) {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.event-item__title {
+    @extend %h3;
+    margin-top: 20px;
+    @media (min-width: break($ml)) {
+        margin-top: 0;
+    }
+    a {
+        color: $c-black;
+        text-decoration: none;
+    }
+}
+
+.event-item__full-date {
+    @extend %ff-i-bd,
+    %ff-ml-i-r;
+    margin-top: 10px;
+}
+
+.event-item__excerpt {
+    margin-top: 20px;
+    @media (min-width: break($ml)) {
+        margin-top: 30px;
+    }
+}
+
+.event-item__cta {
+    margin-top: 15px;
+}
+
+.event-collection__load-more {
+    padding-top: 20px;
+    border-top: 1px solid $c-gray;
+    @media (min-width: break($s)) {
+        margin-top: 10px;
+        padding-top: 40px;
+    }
+}
+
+.no-event {
+    padding-top: 52px;
+    text-align: center;
+    max-width: 430px;
+    margin: 0 auto 92px;
+    img {
+        width: 82px;
+    }
+    p {
+        margin-top: 10px;
+    }
+}

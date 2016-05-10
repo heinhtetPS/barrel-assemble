@@ -1,0 +1,186 @@
+.top-bar-container {
+    height: 40px;
+    background: $c-light-blue;
+    width: 100%;
+    z-index: 1000;
+    ;
+    display: none;
+    @media (min-width: break($s)) {
+        display: block;
+    }
+    @media (min-width: break($mo)) {
+        display: block;
+    }
+    a {
+        color: $c-white;
+        text-decoration: none;
+        line-height: 41px;
+        margin-right: 10px;
+    }
+    .nav-container-inner {
+        text-align: left;
+        @media (min-width: break($l)) {
+            max-width: $container-max-width;
+            padding: 0 40px;
+        }
+        @include flex-justify-content(space-between);
+        .columbia-top-links {
+            a {
+                line-height: 40px;
+                float: left;
+                display: block;
+                height: 40px;
+                margin: 0;
+                margin-right: 10px;
+            }
+            .columbia-alumni__link {
+                &:before {
+                    background: none no-repeat scroll 0 0 $c-white;
+                    content: "";
+                    display: block;
+                    float: left;
+                    height: 15px;
+                    margin: 13px 10px 0 0;
+                    opacity: 0.6;
+                    width: 1px;
+                }
+            }
+        }
+    }
+    li {
+        &:last-child {
+            a {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.header {
+    @extend .clearfix,
+    .vc-container;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.header-container {
+    position: relative;
+    background: $c-main-nav-bg;
+    height: 55px;
+    @include flexbox-display-flex;
+    @media (min-width: break($s)) {
+        height: 55px;
+    }
+    @media (min-width: break($m)) {
+        height: 55px;
+    }
+    @media (min-width: break($mo)) {
+        height: 80px;
+    }
+    .nav-container-inner {
+        text-align: left;
+        padding-right: 0;
+        @media (min-width: break($l)) {
+            padding-left: 40px;
+            max-width: $container-max-width;
+        }
+    }
+}
+
+
+/* Mobile menu : open
+** -----------------------------------------------------------------*/
+
+body.open-mobile-menu .header {
+    left: -280px;
+    @media (min-width: break($l)) {
+        left: 0;
+    }
+}
+
+.nav-container-inner {
+    margin: 0 auto;
+    height: 100%;
+    @include flexbox-display-flex;
+    @include flex-align-content(flex-start);
+    @include flex(1);
+    @include flex-justify-content(flex-start);
+}
+
+.header-container .nav-container-inner {
+    text-align: center;
+}
+
+.columbia-home-logo,
+.columbia-alumni-logo {
+    height: 9.4px;
+    width: auto;
+}
+
+.brand {
+    background-color: transparent;
+    background-image: url("../img/ColumbiaEship-Shortened-Logo.svg");
+    background-position: 0 17px;
+    background-repeat: no-repeat;
+    background-size: auto 20px;
+    color: $c-white;
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 52px;
+    text-align: left;
+    text-decoration: none;
+    width: 215px;
+    @media (min-width: break($mo)) {
+        background-position: 0 29px;
+        @include flex(0 0 19%);
+        width: 100%;
+    }
+    @media (min-width: break($l)) {
+        @include flex(0 0 33%);
+        background-image: url("../img/ColumbiaEship-Full-Logo.svg");
+        background-position: 0 26px;
+        background-size: auto 24px;
+    }
+}
+
+.logo {
+    @extend .bg-contain,
+    .trans-opacity,
+    .vc;
+    width: $logo-width;
+    height: $logo-height;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    margin-right: 67px;
+    @media (min-width: break($header-breakpoint)) {
+        /*background-image: url('../img/logo-stacked.svg');*/
+    }
+}
+
+.cta-social {
+    float: right;
+    @media (min-width: break($header-breakpoint)) {
+        display: block;
+    }
+    .social-icons {
+        display: inline-block;
+    }
+}
+
+.logo--condensed {
+    width: $logo-width-condensed;
+    height: $logo-height-condensed;
+    z-index: 100;
+}
+
+.js-condensed {
+    .header-container {
+        height: $header-height-condensed;
+    }
+}

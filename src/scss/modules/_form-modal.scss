@@ -1,0 +1,311 @@
+.fancybox-lock {
+	.gravity-modal {
+		display:block;
+	}
+	
+	
+}
+
+.fancybox-overlay {
+	background-image:none !important;
+	
+	&:after {
+		content:' ';
+		background-color:$c-light-blue;
+		@include opacity(.8);
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+}
+
+
+.fancybox-overlay {
+	z-index:99999;
+}
+
+.gravity-modal {
+	display:none;
+}
+.gform_wrapper h3.gform_title {
+    @extend %ff-adelle-bold;
+    margin-bottom: 20px !important;
+    font-size: 33px !important;
+    line-height: 39px !important;
+    @media (min-width: break($m)) {
+        font-size: 40px !important;
+        line-height: 46px !important;
+        margin-bottom: 30px !important;
+    }
+    @media (min-width: break($l)) {
+        -webkit-font-smoothing: antialiased;
+        margin-bottom: 30px !important;
+        font-size: 50px !important;
+        line-height: 55px !important;
+    }
+    @media (min-width: break($xl)) {
+        font-size: 64px !important;
+        line-height: 67px !important;
+    }
+}
+
+
+.gform_wrapper {
+    overflow: inherit;
+    margin: 0 !important;
+    max-width: 100% !important;
+}
+
+div.ginput_container_name span {
+	margin-right:0 !important;
+}
+
+.gform_confirmation_wrapper {
+	padding:50px 0;
+	
+	h3 {
+	    @extend %ff-adelle-bold;
+	    margin-bottom: 20px !important;
+	    font-size: 33px !important;
+	    line-height: 39px !important;
+	    @media (min-width: break($m)) {
+	        font-size: 40px !important;
+	        line-height: 46px !important;
+	        margin-bottom: 30px !important;
+	    }
+	    @media (min-width: break($l)) {
+	        -webkit-font-smoothing: antialiased;
+	        margin-bottom: 30px !important;
+	        font-size: 50px !important;
+	        line-height: 55px !important;
+	    }
+	    @media (min-width: break($xl)) {
+	        font-size: 64px !important;
+	        line-height: 67px !important;
+	    }
+	}
+}
+
+div.ginput_complex.ginput_container.gf_name_has_2 span {
+	
+	width:100% !important;
+	padding-right:0 !important;
+	input {
+		width:97.5% !important;
+	}
+	
+    @media (min-width: break($s)) {
+		width:100% !important;
+		padding-right:0 !important;
+		input {
+			width:100% !important;
+		}
+	
+		div.ginput_container_name span {
+			padding-right:0 !important;
+		}
+        
+    }
+	
+    @media (min-width: break($m)) {
+        width:50% !important;
+		padding-right:0px !important;
+		input {
+			width:97.5% !important;
+		}
+		
+		div.ginput_container_name span {
+			padding-right:16px !important;
+		}
+    }
+	
+    @media (min-width: break($l)) {
+        width:50% !important;
+		padding-right:0px !important;
+		input {
+			width:97.5% !important;
+		}
+		
+		div.ginput_container_name span {
+			padding-right:16px !important;
+		}
+    }
+}
+
+.gform_wrapper .gform_footer { margin-bottom:2em !important; margin-right:10px !important;}
+
+.gform_wrapper .ginput_complex label {
+	font-size:14px !important;
+	font-weight:normal;
+	margin-top:.375em;
+}
+
+.fancybox-skin {
+	background:#fff;
+	border-radius:0;
+	padding:0 0px !important;
+}
+
+.fancybox-inner {
+	margin-left:5px;
+	width:auto !important;
+	padding:0px 40px;
+	
+	@media (min-width: break($s)) {
+		 padding:0px 40px;
+	}
+	
+	@media (min-width: break($m)) {
+		 padding:0px 80px;
+	}
+	
+	@media (min-width: break($l)) {
+		 padding:0px 170px;
+	}
+}
+
+.fancybox-close {
+	background-image:none !important;
+	top:0 !important;
+	right:0 !important;
+	width: 50px;
+	height: 50px;
+	
+	&:after {
+		font-family:'FontAwesome';
+	    content: "\f00d";
+		color:$c-gray;
+	    padding: 23px 13px;
+	    display: block;
+	}
+}
+
+.gfield_label {
+	font-weight:normal !important;
+	line-height:1 !important;
+	margin:0 !important;
+}
+
+.form_button button {
+	@extend .button--large-blue;
+}
+
+.gform_wrapper input[type=email], .gform_wrapper input[type=number], .gform_wrapper input[type=password], .gform_wrapper input[type=tel], .gform_wrapper input[type=text], .gform_wrapper input[type=url] {
+	font-size:12px !important;
+}
+
+
+.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first, .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last, .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
+	padding-top:0 !important;
+}
+
+.ginput_container input {
+	width:100%;
+}
+
+.gform_button {
+    @extend %h6;
+    background: $c-light-blue;
+    border: none;
+    color: $c-white !important;
+    display: block;
+    font-size: 12px !important;
+    font-weight: bold;
+    height: 55px !important;
+    line-height: 1 !important;
+    padding: 20px 40px !important;
+    text-align: center;
+	
+    &:hover {
+        background: $c-dark-blue;
+        color: #fff;
+    }
+    &:after {
+        display: none;
+    }
+}
+
+.gform_footer input[type=submit] { padding-bottom:20px !important; }
+
+.gform_wrapper input[type="text"], .gform_wrapper input[type="number"], .gform_wrapper input[type="email"], .gform_wrapper select, .gform_wrapper textarea, .gform_wrapper .dropdown, .gform_wrapper .dropdown__list {
+	border:2px solid $c-hr;
+}
+
+.gform_wrapper input[type="text"]:focus, .gform_wrapper input[type="text"]:active, .gform_wrapper input[type="number"]:focus, .gform_wrapper input[type="number"]:active, .gform_wrapper input[type="email"]:focus, .gform_wrapper input[type="email"]:active, .gform_wrapper textarea:focus, .gform_wrapper textarea:active {
+	border-color:$c-light-blue;
+}
+
+.ginput_complex>span {
+	margin-top:6px;
+}
+
+.gform_wrapper .top_label .gfield_description {
+    padding: .3em 0 0;
+}
+
+.gform_wrapper .description, .gform_wrapper .gfield_description, .gform_wrapper .gsection_description, .gform_wrapper .instruction {
+	font-size:1em;
+}
+
+.form-modal {
+    @extend .trans-all;
+    background-color: $c-white;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: $edge-gutter;
+    right: $edge-gutter;
+    z-index: 12000;
+    text-align: center;
+    max-height: calc(100% - 100px);
+    overflow: auto;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 50px;
+    @media (min-width: break($ml)) {
+        width: 800px;
+        left: 50%;
+        right: initial;
+        transform: translate(-50%, -50%);
+    }
+    &.js-active {
+        visibility: visible;
+        opacity: 1;
+    }
+    .gform_wrapper {
+        max-width: initial;
+    }
+    .gform_footer {
+        text-align: left;
+    }
+}
+
+.form-modal__close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    display: block;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    &:before,
+    &:after {
+        position: absolute;
+        content: " ";
+        display: block;
+        height: 1px;
+        width: 20px;
+        background-color: $c-black;
+        top: 50%;
+    }
+    &:before {
+        transform: translateY(-50%) rotate(45deg);
+    }
+    &:after {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+}

@@ -1,0 +1,173 @@
+.button {
+    @extend %ff-adelle-bold;
+    display: inline-table;
+}
+
+.button--primary {
+    @extend .button;
+    border: 2px solid $c-light-blue;
+    color: $c-light-blue;
+    font-size: 12px;
+    height: 45px;
+    letter-spacing: 1.5px;
+    line-height: 1;
+    margin: 30px 0;
+    padding: 15px 40px 15px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    @media (min-width: break($m)) {
+        width: auto;
+    }
+    i {
+        display: none;
+        margin-left: 10px;
+    }
+    &:after {
+        content: "\f105";
+        display: inline;
+        font-family: FontAwesome;
+        font-size: 16px;
+        font-weight: normal;
+        margin-top: -8px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+    }
+    &:hover {
+        color: $c-dark-blue;
+        border-color: $c-dark-blue;
+    }
+    &.left-arrow:after {
+        content: "\f104";
+    }
+}
+
+.article__content p .button--primary {
+    @extend %ff-adelle-bold;
+    @extend .button--primary;
+}
+
+.button--primary.center {
+    display: block !important;
+    margin: 0 auto;
+}
+
+.button--primary + .button--primary {
+    margin-left: 10px;
+}
+
+.button--white {
+    border-color: $c-white;
+    color: $c-white;
+    &:hover {
+        border-color: $c-white;
+        color: $c-white !important;
+        opacity: 0.6;
+    }
+}
+
+.button--tertiary {
+    @extend .button--primary;
+    border: none;
+    display: block;
+    margin: 20px;
+    padding: 0;
+    &:hover {
+        background: none;
+        color: $c-white;
+        opacity: 0.6;
+    }
+    &:after {
+        right: -15px;
+    }
+}
+
+.button--tertiary.button-white {
+    color: $c-white;
+    border: none;
+}
+
+.button--tertiary.button--blue {
+    color: $c-light-blue;
+    &:hover {
+        background: none;
+        color: $c-dark-blue;
+    }
+}
+
+.button--large-blue {
+    @extend %h6;
+    background: $c-light-blue;
+    border: none;
+    color: $c-white;
+    display: block;
+    font-size: 12px !important;
+    font-weight: bold;
+    height: 55px;
+    line-height: 18px !important;
+    max-width: 230px;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    &:hover {
+        background: $c-dark-blue;
+        color: #fff;
+    }
+    &:after {
+        display: none;
+    }
+}
+
+.button--video {
+    padding: 15px 40px 15px 20px;
+    &:after {
+        background: url("../img/video-btn-ico.svg") no-repeat scroll 0 0/cover transparent;
+        content: "";
+        display: block;
+        font-size: inherit;
+        height: 14px;
+        margin-top: -7px;
+        width: 14px;
+    }
+}
+
+.event-content .button--large-blue {
+    border: 2px solid $c-light-blue;
+    margin: $padding auto;
+    width: 50%;
+    &:hover {
+        border: 2px solid $c-light-blue;
+    }
+}
+
+.button--icon.button--tertiary {
+    border-width: 0;
+    span {
+        @extend .trans;
+        border-bottom: 1px solid $c-black;
+        transition-property: border;
+        vertical-align: top;
+    }
+    i {
+        font-size: 1.1em;
+        margin-right: 5px;
+        vertical-align: top;
+    }
+}
+
+.button--inactive {
+    cursor: default;
+    padding: 15px 20px;
+    &:hover {
+        background-color: inherit;
+        color: inherit;
+        opacity: 1;
+    }
+    &:after {
+        content: "";
+        margin: 0;
+    }
+}

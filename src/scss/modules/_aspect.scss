@@ -1,0 +1,16 @@
+@mixin aspect_ratio($ratio) {
+    padding-bottom: 100%/$ratio;
+}
+
+.as {
+    position: relative;
+    height: 0;
+}
+
+.as-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

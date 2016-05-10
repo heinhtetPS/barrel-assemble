@@ -1,0 +1,82 @@
+.related-posts {
+    padding-bottom: 20px;
+    padding-top: 50px;
+    .blocks-container {
+        margin: 0;
+        padding: 0;
+    }
+    h3 {
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 20px !important;
+        @media (min-width: break($m)) {
+            margin-bottom: 40px !important;
+        }
+    }
+    article {
+        @include flex(1 0 100%);
+        margin-bottom: 25px;
+        @media (min-width: break($s)) {
+            @include flex(0 0 calc(50% - 18px));
+            margin-left: 25px;
+        }
+        @media (min-width: break($mo)) {
+            @include flex(0 0 calc(33.333% - 18px));
+        }
+        @media (min-width: break($l)) {
+            margin-bottom: 50px;
+        }
+        .bg-image {
+            @include flex(1 0 auto);
+            @media (min-width: break($m)) {
+                @include flex(6 6 auto);
+            }
+            @media (min-width: break($l)) {
+                @include flex(6 1 auto);
+            }
+        }
+        .bg-image-container {
+            @include flex(1 0 auto);
+            @media (min-width: break($m)) {
+                @include flex(6 6 auto);
+            }
+            @media (min-width: break($l)) {
+                @include flex(6 1 auto);
+            }
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:nth-child(3) {
+            margin-left: 0;
+            @media (min-width: break($mo)) {
+                margin-left: 25px;
+            }
+        }
+        &:nth-child(4) {
+            margin-left: 0;
+            @media (min-width: break($s)) {
+                margin-left: 25px;
+            }
+            @media (min-width: break($mo)) {
+                margin-left: 0;
+            }
+        }
+        &:nth-child(5) {
+            margin-left: 0;
+            @media (min-width: break($mo)) {
+                margin-left: 25px;
+            }
+        }
+        .bottom-description {
+            h4 {
+                margin-top: 0;
+            }
+        }
+    }
+    article:before {
+        content: "";
+        float: left;
+        padding-top: 0;
+    }
+}

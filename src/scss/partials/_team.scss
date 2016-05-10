@@ -1,0 +1,215 @@
+.article--team {
+    padding-bottom: 0;
+}
+
+.member {
+    padding-bottom: 20px;
+    @media (min-width: break($s)) {
+        display: inline-block;
+        width: 33.33%;
+        text-align: center;
+        padding-bottom: 60px;
+        vertical-align: top;
+    }
+    @media (min-width: break($ml)) {
+        width: 25%;
+    }
+}
+
+.member__photo {
+    width: 70px;
+    margin-right: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    .member--no-bio & {
+        cursor: default;
+    }
+    @media (min-width: break($s)) {
+        width: 180px;
+    }
+}
+
+.member__name {
+    @extend %h6;
+    @media (min-width: break($s)) {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1.5px;
+        margin-top: 20px;
+    }
+}
+
+.member__position {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 5px;
+    @media (min-width: break($s)) {
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
+
+.member__info,
+.member__photo {
+    display: inline-block;
+    vertical-align: middle;
+    @media (min-width: break($s)) {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.member__bio {
+    display: none;
+}
+
+.featured-people {
+    margin-top: 40px;
+    text-align: left;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-bottom: 5px;
+    @media (min-width: break($s)) {
+        padding-top: 60px;
+        padding-bottom: 7px;
+    }
+    .container {
+        max-width: 720px;
+    }
+    .member {
+        display: inline-block;
+        width: 50%;
+        padding: 0 10px 35px;
+        vertical-align: top;
+        @media (min-width: break($s)) {
+            padding-bottom: 60px;
+        }
+    }
+    .member__photo {
+        margin: 0 auto;
+        width: 130px;
+        @media (min-width: break($s)) {
+            width: 250px;
+        }
+    }
+    .member__photo,
+    .member__info {
+        display: block;
+    }
+    .member__name {
+        margin-top: 20px;
+    }
+}
+
+.featured-people,
+.team-modal {
+    .member {
+        text-align: center;
+    }
+    .member__photo {
+        margin: 0 auto;
+        width: 130px;
+        @media (min-width: break($s)) {
+            width: 250px;
+        }
+    }
+    .member__photo,
+    .member__info {
+        display: block;
+    }
+    .member__name {
+        margin-top: 20px;
+    }
+}
+
+.featured-people--one {
+    text-align: center;
+}
+
+.team-collection {
+    text-align: left;
+    max-width: 1060px;
+    margin: 0 auto;
+    @media (min-width: break($s)) {
+        padding-bottom: 10px;
+    }
+    .member:nth-child(n+11) {
+        display: none;
+        @media (min-width: break($s)) {
+            display: inline-block;
+        }
+    }
+    .load-more {
+        padding-top: 20px;
+        border-top: 1px solid $c-gray;
+        padding-bottom: 40px;
+        @media (min-width: break($s)) {
+            display: none;
+        }
+    }
+}
+
+.team-modal {
+    @extend .trans-transform;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $c-white;
+    z-index: 20000;
+    transform: translateX(-100%);
+    @media (min-width: break($s)) {
+        left: initial;
+        width: 500px;
+        transform: translateX(100%);
+    }
+    &.js-active {
+        transform: translateX(0);
+    }
+    .container {
+        @media (min-width: break($s)) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    .member {
+        display: block;
+        width: 100%;
+        padding-top: 35px;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .member__name {
+        @extend %ff-i-b;
+        font-size: 24px;
+        line-height: 1em;
+        letter-spacing: 0.4px;
+        text-transform: none;
+    }
+    .member__position {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    .member__bio {
+        display: block;
+        text-align: left;
+        margin-top: 40px;
+    }
+}
+
+.team-modal__container {
+    overflow-y: scroll;
+    height: calc(100% - 65px);
+}
+
+.team-modal__header {
+    height: 65px;
+    border-bottom: 1px solid $c-gray;
+    padding-top: 23px;
+}
+
+.team-modal__back {
+    border-bottom: none;
+}

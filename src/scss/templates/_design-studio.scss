@@ -1,0 +1,26 @@
+.page-template-design-studio {
+    .about-us {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        h3 {
+            margin-bottom: 50px;
+        }
+        h2,
+        h3 {
+            color: $c-gray;
+        }
+    }
+    .our-people,
+    .article--about-us {
+        padding-bottom: 30px;
+    }
+    .our-people {
+        padding-top: 50px;
+    }
+    .cta-1 {
+        background-image: url('../img/CDS-Banner1.jpg');
+    }
+    .cta-2 {
+        background-image: url('../img/CDS-Banner2.jpg');
+    }
+}

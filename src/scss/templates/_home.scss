@@ -1,0 +1,620 @@
+h1 {
+    @extend %h1;
+}
+h2 {
+    @extend %h2;
+}
+h3 {
+    @extend %h3;
+}
+h4 {
+    @extend %h4;
+}
+.button--primary {
+    margin: 0 auto;
+}
+.home {
+    .content-header__hero {
+        max-height: 420px;
+        @media (min-width: break($m)) {
+            max-height: 520px;
+        }
+    }
+	
+	.pride-carousel {
+		p.intro {
+			max-width:600px;
+			margin:0 auto 30px auto;
+			
+	        @media (min-width: break($s)) {
+	            margin:0 auto 30px auto;
+	        }
+			
+	        @media (min-width: break($m)) {
+	            margin:0 auto 60px auto;
+	        }
+			
+	        @media (min-width: break($l)) {
+	           margin:0 auto 60px auto;
+	        }
+		}
+	}
+}
+.home-pr {
+	div, article { position:relative; }
+    .container {
+        @include flex-align-content(stretch);
+        @include flexbox-display-flex;
+        @include flex-direction(column);
+        @include flex-wrap(nowrap);
+        min-height: 700px;
+        @media (min-width: break($mo)) {
+            @include flex-direction(row);
+        }
+        @media (min-width: break($l)) {
+            max-width: $container-main-width;
+            padding: 0 40px;
+        }
+        @media (min-width: break($xl)) {
+            padding: 0;
+        }
+    }
+    h3 {
+        color: $c-white;
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    .bg-image {
+        @include flexbox-display-flex;
+        @include flex(1);
+        background-size: cover;
+    }
+}
+.home-pr__news {
+    @include flex-align-content(stretch);
+    @include flexbox-display-flex;
+    @include flex-direction(column);
+    @include flex(1);
+    @include flex-wrap(nowrap);
+    margin-right: 0;
+    margin-bottom: 20px;
+    @include flex-wrap(wrap);
+    @media (min-width: break($mo)) {
+        @include flex(0 1 63.5%);
+        margin-bottom: 0;
+        margin-right: 25px;
+    }
+    @media (min-width: break($l)) {
+        @include flex-direction(row);
+        @include flex-wrap(nowrap);
+    }
+    a {
+        @extend %a-gray;
+    }
+    & > article {
+        @include flex-align-content(stretch);
+        @include flexbox-display-flex;
+        @include flex(1);
+        @include flex-direction(column);
+        min-height: 275px;
+        @media (min-width: break($s)) {
+            @include flex-direction(row);
+        }
+        @media (min-width: break($l)) {
+            @include flex-direction(column);
+        }
+        .bg-image {
+            min-height: 160px;
+        }
+        &:first-child {
+            @include flex(1);
+            margin-right: 0;
+            margin-bottom: 15px;
+            @media (min-width: break($s)) {
+                margin-bottom: 20px;
+                height: 265px;
+            }
+            @media (min-width: break($mo)) {
+                margin-bottom: 25px;
+                height: 364px;
+            }
+            @media (min-width: break($l)) {
+                @include flex(0 1 59%);
+                margin-right: 25px;
+                margin-bottom: 0;
+                height: auto;
+            }
+            .bg-image {
+                @media (min-width: break($s)) {
+                    @include flex(0 1 37%);
+                    @include flex-direction(row);
+                }
+                @media (min-width: break($mo)) {
+                    @include flex(0 1 49%);
+                }
+                @media (min-width: break($l)) {
+                    @include flex-direction(column);
+                    @include flex(1);
+                }
+            }
+            .home-description {
+                @include flexbox-display-flex;
+                @include flex(1);
+                @media (min-width: break($s)) {
+                    padding-top: 45px;
+                    @include flex-direction(row);
+                }
+                @media (min-width: break($mo)) {
+                    padding-top: 70px;
+                }
+                @media (min-width: break($l)) {
+                    display: initial;
+                    padding-top: 25px;
+                    @include flex-direction(initial);
+                    @include flex(initial);
+                }
+                .sticker-container {
+                    @media (min-width: break($s)) {
+                        text-align: left;
+                        left: 30px;
+                        top: 3px;
+                    }
+                    @media (min-width: break($mo)) {
+                        top: 30px;
+                    }
+                    @media (min-width: break($l)) {
+                        text-align: center;
+                        top: -12px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        &:last-child {
+            @include flex(1);
+            @media (min-width: break($l)) {
+                @include flex(0 1 39%);
+            }
+        }
+    }
+    .multi--row {
+        height: auto;
+        @media (min-width: break($s)) {
+            height: 345px;
+        }
+        @media (min-width: break($l)) {
+            height: auto;
+        }
+        &>div {
+            @include flexbox-display-flex;
+            @include flex(1);
+            @include flex-direction(column);
+            @include flex-wrap(nowrap);
+        }
+        &>div:first-child {
+            margin-bottom: 15px;
+            margin-right: 0;
+            @media (min-width: break($s)) {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            @media (min-width: break($mo)) {
+                margin-right: 25px;
+            }
+            @media (min-width: break($l)) {
+                margin-bottom: 25px;
+                margin-right: 0;
+            }
+        }
+        .bg-image {
+            @include flex-direction(column);
+        }
+    }
+    .event-recap {
+        background: $c-white;
+        height: auto;
+        padding: 0;
+        h4,
+        a {
+            text-align: left;
+        }
+    }
+    .home-description {
+        position: relative;
+        background: $c-white;
+        @include flex-justify-content(flex-start);
+        padding: 25px;
+        min-height: 90px;
+        @media (min-width: break($s)) {
+            min-height: 128px;
+        }
+        @media (min-width: break($mo)) {
+            padding: 25px 30px;
+        }
+        h3 {
+            @extend %h4;
+            text-align: left;
+            @media (min-width: break($m)) {
+                font-size: 26px;
+                line-height: 36px;
+            }
+            @media (min-width: break($l)) {
+                font-size: 30px;
+            }
+        }
+    }
+	
+	.overlay-link-container:hover {
+		a { color:$c-light-blue; }
+	}
+}
+.home-pr__calendar {
+    @include flex-align-content(stretch);
+    @include flexbox-display-flex;
+    @include flex(1);
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
+    @media (min-width: break($s)) {
+        @include flex-direction(row);
+    }
+    @media (min-width: break($mo)) {
+        @include flex-direction(column);
+        @include flex(1);
+    }
+	
+	.overlay-link-container:hover {
+		a { color:$c-white; @include opacity(.6); width:auto; }
+		.date-icon { @include opacity(.6); width:inherit; }
+	}
+	
+    a {
+        color: $c-white;
+        &:hover {
+            color: $c-white;
+            opacity: 0.6;
+        }
+    }
+	
+	.date-icon {
+		@extend .trans; 
+	}
+	
+    .multi--row {
+        &>div {
+            @include flexbox-display-flex;
+            @include flex(1);
+            @include flex-direction(column);
+            justify-content: center;
+        }
+        &>div:first-child {
+            margin-right: 0;
+            margin-bottom: 15px;
+            @media (min-width: break($s)) {
+                @include flex(0 1 35%);
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            @media (min-width: break($mo)) {
+                @include flex(1);
+                margin-right: 0;
+                margin-bottom: 25px;
+            }
+        }
+        .upcoming-event {
+            @media (min-width: break($s)) {
+                @include flex-direction(row);
+                h3,
+                p {
+                    text-align: left;
+                }
+            }
+            @media (min-width: break($mo)) {
+                @include flex-direction(column);
+                h3,
+                p {
+                    text-align: center;
+                }
+            }
+            .date-icon {
+                @media (min-width: break($s)) {
+                    margin-right: 20px;
+                }
+                @media (min-width: break($mo)) {
+                    margin: 0 auto 30px;
+                }
+            }
+        }
+    }
+    & > article {
+        @include flex-align-content(stretch);
+        @include flexbox-display-flex;
+        @include flex(1);
+        @include flex-direction(column);
+        @media (min-width: break($s)) {
+            @include flex-direction(row);
+        }
+        @media (min-width: break($mo)) {
+            @include flex-direction(column);
+            @include flex(1);
+        }
+    }
+    .community-calendar {
+        background: url("../img/home-community-calendar-bg.gif") no-repeat scroll 0 0 / cover transparent;
+        padding: 60px 25px;
+        @media (min-width: break($mo)) {
+            padding: 60px 30px;
+        }
+        a {
+            white-space: nowrap;
+        }
+    }
+    .upcoming-event {
+        background: url("../img/home-calendar-bg.jpg") no-repeat scroll 0 0 / cover transparent;
+        color: $c-white;
+        padding: 35px 25px;
+        @media (min-width: break($mo)) {
+            padding: 45px 30px;
+        }
+    }
+}
+.home {
+    .pride-blocks {
+        .mobile-title {
+            display: none;
+        }
+    }
+}
+.date-icon {
+    @extend %ff-adelle-bold;
+    padding: 13px 20px;
+    color: $c-light-blue;
+    display: table;
+    margin: 0 auto 30px;
+    background: $c-white;
+    .date-month {
+		@extend %ff-adelle-bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        color: $c-light-blue;
+    }
+    .date-day {
+		@extend %ff-adelle-bold;
+        font-size: 26px;
+        line-height: 1;
+        text-align: center;
+        display: block;
+        color: $c-light-blue;
+    }
+}
+.date-icon.date-icon-blue {
+    background: $c-light-blue;
+    color: $c-white;
+    .date-month {
+        color: $c-white;
+    }
+    .date-day {
+        color: $c-white;
+    }
+}
+.startup-lab {
+    padding: 0;
+    .container {
+        @include flexbox-display-flex;
+        @include flex-align-content(center);
+        @include flex-align-items(center);
+        @include flex-justify-content(center);
+        @include flex-direction(column);
+        height: 100%;
+        min-height: 600px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        position: relative;
+        @media (min-width: break($m)) {
+            @include flex-direction(row);
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    h1,
+    h3,
+    h2,
+    h4 p {
+        color: $c-white;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
+    h4 {
+        margin-bottom: 40px;
+    }
+    article {
+        width: 100%;
+        text-align: center;
+        @media (min-width: break($m)) {
+            text-align: left;
+            margin-right: 10%;
+            max-width: 660px;
+            width: 70%;
+        }
+    }
+    article:last-child {
+        width: 100%;
+        margin-right: 0;
+        @media (min-width: break($m)) {
+            width: 40%;
+            min-width: 350px;
+            max-width: 330px;
+        }
+    }
+    .startup-lab-cta {
+        widht: 100%;
+        h2 {
+            margin: 0;
+        }
+        h3 {
+            margin: 0 0 25px;
+        }
+        .large-p {
+            margin: 15px 0 40px;
+        }
+        .button--primary {
+            display: inline-block;
+        }
+    }
+    .startup-lab-learn-more-cta {
+        @include flexbox-display-flex;
+        @include flex-align-content(center);
+        @include flex-direction(column);
+        @include flex-justify-content(center);
+        border: 2px solid $c-white;
+        height: 275px;
+        padding: 30px;
+        margin-top: 35px;
+        text-align: center;
+        widht: 100%;
+        @media (min-width: break($m)) {
+            margin-top: 0;
+            width: 330px;
+        }
+        h4 {
+            color: $c-white;
+            margin-bottom: 10px;
+        }
+        p {
+            line-height: 22px;
+        }
+        a {
+            color: $c-white;
+            margin-top: 30px;
+            height: auto;
+            width: auto;
+        }
+    }
+}
+.startup-directory {
+    .container {
+        @include flexbox-display-flex;
+        @include flex-align-content(center);
+        @include flex-justify-content(center);
+        @include flex-direction(column);
+        @include flex-align-content(center);
+        @media (min-width: break($m)) {
+            @include flex-direction(row);
+        }
+    }
+    .startup-directory-browse {
+        @include flexbox-display-flex;
+        @include flex-direction(row);
+        @include flex(1);
+        order: 2;
+        @media (min-width: break($m)) {
+            order: 1;
+        }
+    }
+    .startup-directory-cta {
+        @include flex(0 1 44%);
+        @include flex-direction(column);
+        order: 1;
+        text-align: left;
+        margin-bottom: 30px;
+        @media (min-width: break($m)) {
+            margin-bottom: 0;
+            margin-left: 70px;
+            order: 2;
+        }
+        h2 {
+            margin-bottom: 30px;
+        }
+        h2,
+        p {
+            text-align: center;
+            @media (min-width: break($m)) {
+                text-align: left;
+            }
+        }
+        .button--primary {
+            display: block;
+            width: 100%;
+            @media (min-width: break($xl)) {
+                display: inline-block;
+                width: auto;
+            }
+            &:last-child {
+                margin-left: 0;
+                margin-top: 20px;
+                @media (min-width: break($xl)) {
+                    margin-left: 20px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+.ready-for-success {
+    height: 400px;
+    padding: 40px 0;
+    background: url("../img/home-success.jpg") no-repeat scroll center center / cover transparent;
+    @include flexbox-display-flex;
+    @include flex-align-content(center);
+    @include flex-align-items(center);
+    .container {
+        h1 {
+            @extend %h1;
+            color: #fff;
+            margin: 0 auto 50px;
+            max-width: 970px;
+            padding: 0;
+            @media (min-width: break($l)) {
+                line-height: 72px;
+            }
+        }
+        a {
+            display: inline-block;
+        }
+    }
+}
+.bottom-front-info {
+    .blocks-container {
+        > article {
+            @media (min-width: break($s)) {
+                @include flexbox-display-flex;
+                @include flex-align-content(center);
+                @include flex-align-items(center);
+                @include flex(0 1 48.3%);
+                @include flex-wrap(wrap);
+                margin-top: 0;
+                margin-left: 20px;
+            }
+            @media (min-width: break($mo)) {
+                @include flex(1);
+                @include flex-wrap(nowrap);
+            }
+            @media (min-width: break($l)) {
+                margin-left: 25px;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-left: 0;
+                margin-top: 20px;
+                @media (min-width: break($mo)) {
+                    margin-top: 0;
+                    margin-left: 20px;
+                }
+                @media (min-width: break($l)) {
+                    margin-left: 25px;
+                }
+            }
+            h3 {
+                line-height: 24px;
+                @media (min-width: break($mo)) {
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}

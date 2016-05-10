@@ -1,0 +1,13 @@
+.single-resource {
+    .article__content {
+        margin-top: $padding * 2;
+    }
+    .article__content.container {
+        @media (min-width: break($m)) {
+            max-width: 740px;
+        }
+    }
+    .featured_resource_image {
+        margin-bottom: $padding * 2;
+    }
+}

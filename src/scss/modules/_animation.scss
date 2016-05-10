@@ -1,0 +1,231 @@
+@keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flickerAnimationOff {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.animate-flicker {
+    animation: flickerAnimation 1s infinite;
+}
+
+.animate-flicker-off {
+    animation: flickerAnimationOff 1s infinite;
+}
+
+@-webkit-keyframes hoverAnimation {
+    from {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@-moz-keyframes hoverAnimation {
+    from {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@-ms-keyframes hoverAnimation {
+    from {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@-o-keyframes hoverAnimation {
+    from {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes hoverAnimation {
+    from {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.animate-hover {
+    animation: hoverAnimation 2s infinite;
+}
+
+
+/*
+$animation-speed: 0.5s;
+
+[data-module-init="animation"] {
+    @extend .trans-all;
+
+    transition-duration: $animation-speed;
+
+    &[data-fade-all="true"] {
+        opacity: 0;
+
+        &.js-loaded {
+            opacity: 1;
+        }
+    }
+    &:not([data-fade-all="true"]) {
+        .header,
+        .hero {
+            @extend .trans-opacity;
+            transition-duration: $animation-speed;
+            opacity: 0;
+        }
+
+        .hero__content,
+        .content-header {
+            opacity: 0;
+        }
+
+        &.js-loaded {
+            &,
+            .header,
+            .hero {
+                opacity: 1;
+            }
+
+            .hero__content {
+                animation: $animation-speed $transition-timing-function 0.5s forwards fade-up--center;
+            }
+
+            .content-header {
+                animation: $animation-speed $transition-timing-function 0.5s forwards fade-in;
+            }
+        }
+
+        [data-fold-animation] {
+            &,
+            [data-fold-animation-delay] {
+                opacity: 0;
+            }
+        }
+
+        .js-animate {
+            &[data-fold-animation="fade-up"],
+            [data-fold-animation-delay] {
+                animation: $animation-speed $transition-timing-function forwards fade-up;
+            }
+
+            &[data-fold-animation-delay],
+            [data-fold-animation-delay] {
+                animation-delay: 0.5s;
+            }
+            &[data-fold-animation-delay="1s"],
+            [data-fold-animation-delay="1s"] {
+                animation-delay: 1s;
+            }
+        }
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fade-up--center {
+    from {
+        transform: translate(-50%, -45%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+*/

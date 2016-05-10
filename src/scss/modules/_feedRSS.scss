@@ -1,0 +1,17 @@
+.blocks .feedRSS {
+    background: $c-white;
+    color: $c-gray;
+    background: #fff;
+    color: #454545;
+    @include flex-justify-content(space-between);
+    @include flex-align-items(flex-start);
+    @include flex-align-content(space-between);
+    text-align: left;
+    blockquote {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        margin: 0;
+    }
+}

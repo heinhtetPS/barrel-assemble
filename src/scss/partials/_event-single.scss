@@ -1,0 +1,43 @@
+.content-header--event {
+	padding-bottom: 40px;
+
+	@media (min-width: break($s)) {
+		padding-bottom: 60px;
+	}
+
+	.content-header__intro {
+		margin-top: 40px;
+	}
+	.content-header__date {
+		@extend %h2;
+		color: $c-green;
+		margin-top: 20px;
+
+		@media (min-width: break($s)) {
+			margin-top: 30px;
+		}
+	}
+	.content-header__address {
+		margin-top: 15px;
+
+		@media (min-width: break($s)) {
+			margin-top: 35px;
+		}
+	}
+	.content-header__cta {
+		margin-top: 10px;
+
+		@media (min-width: break($s)) {
+			margin-top: 15px;
+		}
+	}
+}
+.event__content {
+	padding-top: 30px;
+	border-top: 1px solid $c-gray;
+	margin-top: 0;
+
+	@media (min-width: break($s)) {
+		padding-top: 50px;
+	}
+}

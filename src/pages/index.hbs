@@ -1,0 +1,105 @@
+---
+title: Best Gaming Router | Twitch Streaming | Nighthawk X4S AC2600 (R7800) from NETGEAR
+page-template: temp-home
+meta-description: Want the best gaming wireless speeds in 2016? Look no further than the NETGEAR Nighthawk® X4S AC2600 Smart WiFi Router. Smoother Twitch streaming and gaming.
+og-title: NETGEAR R7800
+og-description: Fastest gaming performance. Unmatched processing power. Superior WiFi technology. Nighthawk® X4S AC2600 Smart WiFi Router with 160MHz, MU-MIMO and Quad Stream technology delivers WiFi to multiple devices simultaneously for faster speeds. Whether gaming or streaming, you're getting 160MHz bandwidth that ensures low-ping and best stream quality. Enjoy ultimate WiFi speeds up to 2.53Gbps, a powerful 1.7GHz dual core processor, and Dynamic QoS, delivering smoother streaming and gaming by prioritizing applications and devices.
+meta-url: /
+---
+  {{#with index}}
+    {{#with hero}}
+      <section class="hero" data-animation="fade-in">
+        <div class="container hero__container">
+          <h2 class="hero__headline">{{headline}}</h2>
+          <p class="hero__intro">{{intro}}</p>
+          <div class="hero__cta">
+            <a class="button" href="{{cta.url}}" data-module-init="scroll-to">{{cta.title}}</a>
+          </div>
+        </div>
+        <div class="hero__image-container" data-animation="up">
+          <img class="hero__image" src="{{image}}" alt="{{image_alt}}">
+        </div>
+      </section>
+    {{/with}}
+
+    {{#with performance}}
+      <section class="block block--performance">
+        <div class="block__wrapper container">
+          <div class="block__container">
+            <h3 class="block__headline">{{headline}}</h3>
+
+            <ul class="block__list">
+              {{#each list}}
+              <li class="block__list-item">{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+
+        <div class="block__image-container block__image-container--last">
+          <img class="block__image" src="{{image}}" alt="{{image_alt}}">
+        </div>
+      </section>
+    {{/with}}
+
+    {{#with power}}
+      <section class="block block--power">
+        <div class="block__image-container">
+          <img class="block__image" src="{{image}}" alt="{{image_alt}}">
+        </div>
+
+        <div class="container block__container">
+          <h3 class="block__headline">{{headline}}</h3>
+
+          <ul class="block__list">
+            {{#each list}}
+            <li class="block__list-item">{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </section>
+    {{/with}}
+
+    {{#with technology}}
+      <section class="block block--technology">
+          <div class="block__image-container">
+            <img class="block__image" src="{{image}}" alt="{{image_alt}}">
+          </div>
+
+        <div class="block__wrapper container">
+          <div class="block__container">
+            <h3 class="block__headline">{{headline}}</h3>
+
+            <ul class="block__list">
+              {{#each list}}
+              <li class="block__list-item">{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </section>
+    {{/with}}
+
+      <section class="block block--ctas" id="ScrollTarget">
+        <div class="container">
+          <ul class="block__ctas">
+            <li class="block__cta">
+              <script type="text/javascript" src="//embeddedcloud.pricespider.com/repository/netgear/js/auxiliary_v1.0.min.js"></script>
+              <script type="text/javascript">
+              pswtb.loader.show({
+                container: document.getElementById('wtbContainer'), 
+                language: 'en', 
+                widgetConfigurationId: 'd247f164-28d0-4153-9f8d-5b61b75977aa', 
+                sku: 'US_R7800' 
+              });
+              </script>
+            </li>
+            {{#each ctas}}
+            <li class="block__cta">
+              <a {{#if class}}class="{{class}}" {{/if}}href="{{url}}">{{title}}</a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </section>
+  {{/with}}

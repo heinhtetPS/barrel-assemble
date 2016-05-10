@@ -1,0 +1,243 @@
+.page-template-startup-directory {
+    .main-wrapper {
+        background-color: $c-white;
+        h1 {
+            color: $c-light-blue;
+        }
+    }
+    .startup-directory__subtitle {
+        margin: 0 auto;
+    }
+    .resource-category-container {
+        margin: 30px 0 0;
+        @media (min-width: break($m)) {
+            margin: 50px 0 0;
+        }
+        @media (min-width: break($mo)) {
+            margin: 60px 0 0;
+        }
+        @media (min-width: break($l)) {
+            margin: 70px 0 0;
+        }
+    }
+}
+.startup-directory {
+    .article__content {
+        margin: 0;
+    }
+    .startup-blocks {
+        @extend .pride-blocks;
+        margin: 0;
+        width: 100%;
+        article {
+            @include flex(0 1 100%);
+            padding: 0;
+            background-size: 0;
+            margin-bottom: 0;
+            margin: 0;
+            &:before {
+                display: none;
+            }
+        }
+        .blocks-container {
+            @include flex( 0 1 100%);
+            height: 25%;
+            margin-bottom: 25px;
+            @media (min-width: break($xs)) {
+                @include flex( 0 1 50%);
+                border: 2px solid $c-light-gray;
+                border-left: 0;
+                border-top: 0;
+                margin-bottom: 0em;
+            }
+            @media (min-width: break($m)) {
+                @include flex( 0 1 33.333%);
+            }
+            @media (min-width: break($l)) {
+                @include flex( 0 1 25%);
+            }
+        }
+    }
+    li {
+        list-style: none;
+    }
+}
+.article--startup {
+    .startup-directory {
+        background: $c-white;
+        width: 100%;
+        .container {
+            @include flexbox-display-flex;
+            @include flex-direction(column);
+            @include flex-align-items(center);
+            @media (min-width: break($m)) {
+                @include flex-direction(row);
+            }
+            &>article:first-child {
+                overflow: hidden;
+                /*margin-right: $padding*4;*/
+                @media (min-width: break($xs)) {
+                    border: 2px solid $c-light-gray;
+                }
+            }
+            article {
+                padding: 0;
+            }
+        }
+        .mobile-image {
+            @include flexbox-display-flex;
+            border: 2px solid $c-hr;
+            float: left;
+            width: 76px;
+            height: 76px;
+            background-size: 80%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            @media (min-width: break($xs)) {
+                display: none;
+            }
+        }
+        article {
+            width: 100%;
+            background-size: 0;
+            @media (min-width: break($xs)) {
+                background-size: 80%;
+                @include flex(0 1 100%);
+                padding: 40px;
+                &:before {
+                    display: block;
+                }
+            }
+        }
+        img {
+            display: block;
+            width: 100%;
+            float: left;
+            @media (min-width: break($s)) {
+                display: none;
+            }
+        }
+        .headline-intro {
+            text-align: left;
+        }
+        .startup-blocks {
+            @include flexbox-display-flex;
+            @include flex-justify-content(flex-start);
+            @include flex-wrap(wrap);
+            margin: 0 auto;
+            padding: 0;
+            @media (min-width: break($xs)) {
+                width: calc(100% + 4px);
+                margin: 0 -4px -4px -2px;
+            }
+            article {
+                .overlay {
+                    color: $c-gray;
+                    display: block;
+                    float: left;
+                    position: relative;
+                    width: calc(100% - 76px);
+                    h3 {
+                        margin: 0;
+                    }
+                    * {
+                        color: $c-gray;
+                        text-align: left;
+                    }
+                    .overlay-background {
+                        background-color: transparent;
+                    }
+                    .overlay-content {
+                        padding: 0 0 0 20px;
+                        position: relative;
+                        display: block;
+                        h4 {
+                            margin-bottom: 0;
+                        }
+                        p {
+                            margin-top: 5px;
+                        }
+                        h4,
+                        p {
+                            display: block;
+                        }
+                        .button--tertiary {
+                            @extend .button--tertiary.button--blue;
+                            margin-top: 15px;
+                            text-align: left;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    @media (min-width: break($xs)) {
+                        display: none;
+                        color: #fff;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        .overlay-content {
+                            @include flexbox-display-flex;
+                            margin-top: 0;
+                            padding: 0 20px;
+                            position: absolute;
+                            .button--tertiary {
+                                transition-duration: $transition-duration;
+                                transition-timing-function: $transition-timing-function;
+                                transition-property: opacity;
+                                color: $c-white;
+                                margin-top: $padding !important;
+                                &:hover {
+                                    color: $c-white;
+                                    opacity: 0.6;
+                                }
+                            }
+                            * {
+                                color: $c-white;
+                                text-align: center;
+                            }
+                            p {
+                                font-family: $ff-adelle;
+                                font-size: 14px;
+                                line-height: 1.4;
+                                margin-top: 10px;
+                            }
+                        }
+                        .overlay-background {
+                            background-color: $c-bright-blue;
+                        }
+                    }
+                }
+            }
+            .list-content {
+                background-color: #fff;
+                width: 100%;
+                height: auto;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                text-indent: -9999px;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+        }
+        .startup-directory-cta {
+            padding-left: 74px;
+            text-align: left;
+            .headline-intro {
+                margin: 0;
+            }
+            h2 {
+                margin: 20px 0 44px;
+            }
+            a {
+                display: inline-block;
+            }
+        }
+    }
+}

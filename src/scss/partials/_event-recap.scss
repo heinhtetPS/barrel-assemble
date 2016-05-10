@@ -1,0 +1,35 @@
+.event-recap {
+    height: 28.1vw;
+    color: white;
+    background: #3a8bce;
+    text-align: center;
+    max-height: 390px;
+    align-content: center;
+    text-align: center;
+    padding: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-flex: 0 0 calc(33.333% - 30px);
+    flex: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: center;
+    text-align: center;
+    &>div {
+        @include flexbox-display-flex;
+        @include flex-direction(column);
+        @include flex-align-content(flex-end);
+        @include flex-align-items(stretch);
+        @include flex-justify-content(flex-end);
+        @include flex-basis(1);
+    }
+    .bg-image {
+        @include flex(1);
+    }
+}

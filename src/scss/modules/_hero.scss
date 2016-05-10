@@ -1,0 +1,147 @@
+.hero {
+	@extend .as;
+	@include aspect_ratio(32/15);
+	min-height: $hero-height;
+	max-height: $hero-height-desktop;
+	position: relative;
+
+	@media (min-width: break($hero-breakpoint)) {
+		@include aspect_ratio(2.4);
+	}
+
+	.slick-list {
+		overflow: hidden;
+	}
+
+	.slick-arrow {
+		@extend .trans-all;
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		background: $c-white;
+		border: none;
+		border-radius: 50%;
+		color: $c-green;
+		z-index: 1100;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 40px;
+		height: 40px;
+		font-size: 30px;
+
+		&:hover {
+			background-color: $c-green;
+			color: $c-white;
+		}
+
+		.fa {
+			vertical-align: middle;
+		}
+	}
+	.slick-prev {
+		left: 50px;
+		text-indent: -1px;
+	}
+	.slick-next {
+		right: 50px;
+		text-indent: 1px;
+	}
+	.slick-dots {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
+		padding: 14px 8px;
+		background-color: $c-white;
+		border-radius: 4px;
+		box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08);
+		z-index: 1100;
+		line-height: 0;
+		font-size: 0;
+
+		li {
+			display: inline-block;
+			margin: 0 6px;
+
+			&.slick-active button {
+				background: $c-black;
+			}
+		}
+
+		button {
+			@extend .trans-all;
+			background: $c-white;
+			border: 1px solid $c-black;
+			border-radius: 50%;
+			width: 10px;
+			height: 10px;
+			padding: 0;
+			text-indent: -9999em;
+		}
+	}
+
+	@media (min-width: break($m)) {
+		&:hover .slick-arrow {
+			visibility: visible;
+			opacity: 1;
+		}	
+	}
+}
+.hero__slide {
+	@extend .bg-cover !optional;
+  @extend .vc-container;
+	position: absolute !important;
+	top: 0;
+	left: 0 !important;
+	bottom: 0;
+	right: 0; 
+	width: 100%;
+}
+.hero__content {
+	@extend .vc;
+
+	margin: 0 auto;
+	padding: 0 $edge-gutter;
+	left: 50%;
+	width: 100%;
+	max-width: 800px + $edge-gutter * 2;
+	transform: translate(-50%, -50%);
+}
+.hero__headline {
+	@extend %h1;
+	letter-spacing: 2.93px;
+
+	color: $c-white;
+	text-align: center;
+}
+.hero__headline + .hero__ctas {
+	margin-top: 20px;
+
+	@media (min-width: break($hero-breakpoint)) {
+		margin-top: 30px;
+	}
+}
+.hero__ctas {
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 9px;
+	}
+}
+.js {
+	.hero {
+		@extend .trans-all;
+		visibility: none;
+		opacity: 0;
+
+		&.slick-initialized {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+.hero--home {
+	min-height: $hero-height-home;
+	max-height: $hero-height-home-desktop;
+	@include aspect_ratio(144/73);
+}

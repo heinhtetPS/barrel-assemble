@@ -1,0 +1,28 @@
+.social-icon {
+    display: inline-block;
+    color: $c-white;
+    a {
+        color: $c-white;
+        font-size: 20px;
+        @media (min-width: break($footer-break)) {
+            font-size: 16px;
+        }
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+footer .social-icon {
+    margin: 0 $padding;
+    a {
+        color: $c-light-blue;
+        &:hover {
+            color: $c-dark-blue;
+            opacity: 1;
+        }
+    }
+    @media (min-width: break($footer-break)) {
+        margin: 0 0 0 $padding;
+    }
+}

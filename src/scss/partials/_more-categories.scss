@@ -1,0 +1,56 @@
+.more-categories {
+    padding-top: 30px;
+    width: 100%;
+    @media (min-width: break($s)) {
+        padding-top: 40px;
+    }
+    h4 {
+        margin-bottom: 25px;
+        text-align: center;
+        font-size: 20px;
+        @media (min-width: break($m)) {
+            margin-bottom: 25px;
+        }
+    }
+    li {
+        @extend %cfx;
+        border-bottom: 2px solid #f0f3f7;
+    }
+    li:last-child {
+        border-bottom: none;
+        a {
+            @media (min-width: break($s)) {
+                padding-bottom: 0;
+            }
+        }
+    }
+    a {
+        @extend %aside-a;
+        padding-bottom: $padding;
+        padding-top: $padding;
+        line-height: 1;
+        text-indent: 0;
+        width: 100%;
+        display: block;
+        @media (min-width: break($m)) {
+            text-indent: $padding/2;
+        }
+    }
+    a:after {
+        font-family: FontAwesome;
+        content: "\f0da";
+        float: right;
+    }
+    @media (min-width: break($m)) {
+        li {
+            margin: 0;
+            line-height: 1;
+        }
+        li+li {
+            margin: 0;
+        }
+    }
+    @media (min-width: break($m)) {
+        float: left;
+    }
+}

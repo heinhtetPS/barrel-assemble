@@ -1,0 +1,35 @@
+.hello-bar {
+	z-index: 12000;
+	width: 100%;
+	text-align: left;
+	line-height: 20px;
+	background-color: $c-green;
+	padding: 20px 0;
+
+	@media (min-width: break($hello-bar-breakpoint)) {
+		text-align: center;
+	}
+
+	a,
+	span {
+		color: $c-white;
+	}
+	a {
+		@extend %h6;
+		display: block;
+		margin-left: 0;
+		margin-top: 7px;
+
+		@media (min-width: break($m)) {
+			display: inline-block;
+			margin-left: 20px;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+	.hello-bar__container {
+		height: 100%;
+	}
+}

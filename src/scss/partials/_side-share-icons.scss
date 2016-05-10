@@ -1,0 +1,41 @@
+.side-share-icons {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: $c-light-blue;
+    width: 40px;
+    margin: 0;
+    padding: 0;
+    display: none;
+    z-index: 9999;
+    @media (min-width: break($m)) {
+        display: block;
+    }
+    @media (min-width: break($l)) {
+        display: block;
+    }
+    a {
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        background: $c-light-blue;
+        color: $c-white;
+        display: block;
+        text-align: center;
+        line-height: 40px;
+        &:hover {
+            background: $c-dark-blue;
+        }
+    }
+    &.fixed {
+        position: fixed;
+        top: 40px;
+        left: 0;
+    }
+    &.bottom {
+        position: absolute !important;
+        top: auto !important;
+        left: 0;
+        bottom: 0;
+    }
+}

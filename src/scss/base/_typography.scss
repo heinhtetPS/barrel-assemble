@@ -1,0 +1,401 @@
+* {
+    word-break: normal !important;
+}
+%ff-adelle {
+    font-family: $ff-adelle;
+    -webkit-font-smoothing: antialiased;
+}
+
+%ff-adelle-bold {
+    font-family: $ff-adelle-bold;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+}
+
+%ff-freight-text {
+    font-family: $ff-freight-text;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+%h1 {
+    @extend %ff-adelle-bold;
+    margin-bottom: 20px;
+    font-size: 33px;
+    line-height: 39px;
+    @media (min-width: break($m)) {
+        font-size: 40px;
+        line-height: 46px;
+        margin-bottom: 30px;
+    }
+    @media (min-width: break($l)) {
+        -webkit-font-smoothing: antialiased;
+        margin-bottom: 30px;
+        font-size: 50px;
+        line-height: 55px;
+    }
+    @media (min-width: break($xl)) {
+        font-size: 64px;
+        line-height: 67px;
+    }
+}
+
+%h2 {
+    @extend %ff-adelle;
+    -webkit-font-smoothing: antialiased;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 30px;
+    @media (min-width: break($m)) {
+        font-size: 33px;
+        line-height: 38px;
+    }
+    @media (min-width: break($l)) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
+%h3 {
+    @extend %ff-adelle-bold;
+    -webkit-font-smoothing: antialiased;
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    @media (min-width: break($m)) {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 32px;
+    }
+    @media (min-width: break($l)) {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
+
+%h4 {
+    @extend %ff-adelle-bold;
+    font-family: "adelle-sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    @media (min-width: break($m)) {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    @media (min-width: break($l)) {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+%h5 {
+    @extend %ff-adelle;
+    font-size: 14px;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    @media (min-width: break($s)) {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 1.4px;
+    }
+    @media (min-width: break($m)) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    @media (min-width: break($l)) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+%h6 {
+    @extend %ff-adelle-bold;
+    font-size: 14px;
+    line-height: 1.2em;
+    @media (min-width: break($m)) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    @media (min-width: break($l)) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+%p {
+    @extend %ff-freight-text;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: .015em;
+    @media (min-width: break($m)) {
+        font-size: 18px;
+        line-height: 27px;
+    }
+    @media (min-width: break($l)) {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+%p.introduction {
+    @extend %ff-adelle;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    @media (min-width: break($m)) {
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+    @media (min-width: break($l)) {
+        font-size: 26px;
+        line-height: 37px;
+        margin-bottom: 30px;
+    }
+}
+
+p.introduction {
+	@extend %p.introduction;
+}
+
+%article-h1 {
+    @extend %h1;
+}
+
+%article-h2 {
+    @extend %h2;
+}
+
+article h2 {
+    @extend %h2;
+    color: $c-gray;
+}
+
+%article-h3 {
+    @extend %h3;
+}
+
+%article-h4 {
+    @extend %h4;
+}
+
+%article-h5 {
+    @extend %h5;
+}
+
+%aside-a {
+    color: $c-gray;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+figcaption {
+    @extend %image-caption;
+}
+
+%image-caption {
+    text-align: left;
+    margin: $padding/2 0 ($padding *2) 0;
+    font-size: 14px;
+}
+
+%p.regular {
+    font-family: $ff-adelle;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+%blockquote {
+    color: $c-light-blue;
+    font-family: $ff-adelle-bold;
+    font-weight: bold;
+    border-left: 2px solid $c-light-blue;
+    margin: 30px 0;
+    padding-left: $padding;
+    quotes: "\201C""\201D""\2018""\2019";
+    @media (min-width: break($m)) {
+        margin-left: 47px;
+    }
+    p {
+        @extend %h3;
+        font-family: $ff-adelle-bold;
+        color: $c-light-blue;
+        font-weight: bold;
+        margin-bottom: 0;
+        @media (min-width: break($m)) {
+            line-height: 36px;
+        }
+        &:before {
+            color: #499fe7;
+            content: open-quote;
+            line-height: .8em;
+            vertical-align: -0em;
+            float: left;
+        }
+        &:after {
+            color: #499fe7;
+            content: close-quote;
+            line-height: .8em;
+            vertical-align: -0em;
+        }
+    }
+}
+
+@mixin normal-mobile {
+    font-size: 13px;
+    line-height: 1.5em;
+    letter-spacing: 0.2px;
+}
+
+@mixin normal-desktop {
+    font-size: 15px;
+    line-height: 1.6em;
+}
+
+%normal {
+    @include normal-mobile;
+    @media (min-width: break($s)) {
+        @include normal-desktop;
+    }
+}
+
+body {
+    @extend %ff-adelle;
+    color: $c-gray;
+}
+
+a {
+    @extend %ff-adelle;
+    text-decoration: none;
+    color: $c-light-blue;
+    &:hover {
+        color: $c-dark-blue;
+    }
+}
+
+%a-gray {
+    @extend %ff-adelle;
+    text-decoration: none;
+    color: $c-gray;
+    &:hover {
+        color: $c-dark-blue;
+    }
+}
+
+p.large-p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 30px;
+    font-weight: normal;
+    @media (min-width: break($m)) {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 30px;
+    }
+}
+
+.block-link {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        color: inherit;
+    }
+}
+
+.subsection-title {
+    @extend %h4;
+    text-align: center;
+    margin-bottom: -5px;
+    @media (min-width: break($ml)) {
+        margin-bottom: 0;
+    }
+}
+
+.headline-intro {
+    @extend %ff-adelle-bold;
+    color: $c-light-blue;
+    font-size: 14px;
+    letter-spacing: .08em;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.sticker-container {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: -12px;
+    left: 0;
+}
+
+.sticker {
+    @extend %ff-adelle-bold;
+    background: $c-light-blue !important;
+    color: $c-white !important;
+    font-size: 10px !important;
+    letter-spacing: .1em !important;
+    padding: 7px 15px !important;
+    text-transform: uppercase !important;
+}
+
+hr {
+    border-top: 1px solid $c-hr;
+    border-left: none;
+    border-bottom: 1px solid $c-hr;
+    border-right: none;
+    margin: 30px 0;
+    @media (min-width: break($s)) {
+        margin: 40px 0;
+    }
+    @media (min-width: break($ml)) {
+        margin: 50px 0;
+    }
+}
+
+select {
+    @extend %p.regular;
+    border: 2px solid $c-border-gray;
+    background-color: $c-white;
+    padding: ($padding/2) $padding;
+    position: relative;
+    padding-right: $padding * 2;
+}
+
+.select-holder {
+    position: relative;
+}
+
+.select-holder:after {
+    font-family: FontAwesome;
+    font-size: .5em;
+    position: absolute;
+    top: 50%;
+    right: $padding;
+    margin-top: -.8em;
+    content: "\f0d7";
+}
+
+.center {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.gray {
+    -moz-filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+}

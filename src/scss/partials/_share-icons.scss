@@ -1,0 +1,66 @@
+.share-icons-container {
+    margin-top: $padding*2;
+}
+
+.share-icons {
+    margin: 0;
+    padding: 0;
+    @include flexbox-display-flex;
+    @include flex-wrap(wrap);
+    @include flex-align-items(stretch);
+    @include flex-flow(row);
+    @include flex-align-items(stretch);
+    @include flex-justify-content(space-between);
+    width: 100%;
+    line-height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    @media (min-width: break($m)) {
+        margin: 0;
+        padding: 0;
+    }
+    @media (min-width: break($l)) {
+        margin: 0;
+        padding: 0;
+    }
+    a:before {
+        content: '';
+        float: left;
+        padding-top: 100%;
+    }
+    a {
+        @include transition($speed border);
+        @include flexbox-display-flex;
+        @include flex-justify-content(center);
+        @include flex-align-content(center);
+        @include flex-align-items(center);
+        @include flex-justify-content(center);
+        @include flex(1 1 25%);
+        height: auto;
+        border: 2px solid $c-light-gray;
+        padding: 0 !important;
+        font-size: 20px;
+        border: 2px solid #f0f3f7;
+        margin: 0 5px;
+        @media (min-width: break($s)) {
+            font-size: 24px;
+        }
+        @media (min-width: break($m)) {
+            margin: 0 7.5px;
+            font-size: 36px;
+        }
+        @media (min-width: break($l)) {
+            margin: 0 ($padding/2);
+        }
+    }
+    a:hover {
+        color: $c-light-blue;
+        border: 2px solid $c-light-blue;
+    }
+    a:first-child {
+        margin-left: 0;
+    }
+    a:last-child {
+        margin-right: 0;
+    }
+}

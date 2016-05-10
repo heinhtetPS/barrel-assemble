@@ -1,0 +1,241 @@
+.blog-landing {
+    padding-bottom: 0;
+    .gray-container {
+        padding-top: 20px;
+        margin-top: 60px;
+        @media (min-width: break($m)) {
+            padding-top: 50px;
+        }
+    }
+    section {
+        @include flexbox-display-flex;
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+        @include flex-justify-content(space-between);
+        h3 {
+            @include flex(0 0 100%);
+            text-align: center;
+            margin-bottom: ($padding);
+            @media (min-width: break($s)) {
+                margin-bottom: ($padding * 2);
+            }
+        }
+        span {
+            @include flexbox-display-flex;
+            @include flex(100%);
+        }
+        .bg-image {
+            padding: 25% 0;
+        }
+    }
+    section:last-child span {
+        margin-bottom: 0;
+    }
+    hr {
+        border-top: 1px solid #959595;
+        border-bottom: 1px solid #959595;
+        @include opacity(.16);
+    }
+    a {
+        &:hover {
+            color: $c-dark-blue;
+        }
+    }
+    .blocks-container {
+        margin-bottom: 20px;
+        @media (min-width: break($s)) {
+            margin-bottom: 30px;
+        }
+        @media (min-width: break($m)) {
+            margin-bottom: 50px;
+        }
+    }
+    .blocks {
+        article {
+            @include flex(1 0 100%);
+            margin: 0 0 20px 0;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            @media (min-width: break($s)) {
+                @include flex(0 1 calc(50% - 15px));
+                margin: 0 0 0 30px;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+            @media (min-width: break($l)) {
+                @include flex(0 1 calc(50% - 25px));
+                margin: 0 0 0 50px;
+            }
+            .bg-image-container {
+                position: relative;
+                > a {
+                    background-size: cover;
+                    height: 200px;
+                    padding: 0;
+                    width: 100%;
+                    @media (min-width: break($xs)) {
+                        height: 250px;
+                    }
+                    @media (min-width: break($m)) {
+                        height: 314px;
+                    }
+                }
+            }
+            .bottom-description {
+                min-height: 140px;
+                padding: 15px 30px 20px 30px;
+                @media (min-width: break($s)) {
+                    padding: 15px 30px 20px 30px;
+                }
+                @media (min-width: break($m)) {
+                    padding: 30px;
+                }
+                a {
+                    margin: 0 0 10px;
+                }
+            }
+            &:before {
+                padding: 0;
+            }
+        }
+    }
+    .nav__tertiary {
+        @include flex-wrap(wrap);
+        li {
+            width: 100%;
+            @media (min-width: break($m)) {
+                width: auto;
+            }
+        }
+        a {
+            @extend %h6;
+            font-size: 12px;
+            line-height: 22px;
+            text-transform: uppercase;
+            width: 100%;
+            display: block;
+            border-right: 2px solid #f0f3f7;
+            border-bottom: 0;
+            @media (min-width: break($m)) {
+                border: 2px solid #f0f3f7;
+                border-right: none;
+            }
+        }
+        li:last-child a {
+            border-bottom: 2px solid #f0f3f7;
+            @media (min-width: break($m)) {
+                border-right: 2px solid #f0f3f7;
+                border-bottom: 2px solid #f0f3f7;
+            }
+        }
+    }
+}
+
+.blog {
+    .blog-landing + .section__now-trending {
+        background-color: $c-white;
+        float: left;
+        width: 100%;
+        padding: 25px 0;
+        h4 {
+            @extend %h3;
+            margin-bottom: 20px;
+        }
+        @media (min-width: break($s)) {
+            padding: 40px 0;
+            h4 {
+                font-size: 26px;
+            }
+        }
+        @media (min-width: break($m)) {
+            padding: 70px 0;
+            h4 {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+        }
+        @media (min-width: break($l)) {
+            h4 {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+.category {
+    .section__now-trending {
+        background-color: #f0f3f7;
+        float: left;
+        width: 100%;
+        padding-top: 70px;
+    }
+    .gray-container {
+        padding-bottom: 0;
+    }
+}
+
+.section__now-trending {
+    padding: 0;
+    @media (min-width: break($m)) {
+        padding: 0 0 50px 0;
+    }
+    h4 {
+        @extend %h3;
+        margin: 0 auto;
+        margin-bottom: $padding * 2;
+    }
+    .now-trending,
+    ul {
+        @include flexbox-display-flex;
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+        @include flex-justify-content(space-between);
+        li {
+            margin: 0;
+            padding: 14px 0;
+            line-height: 1.2 !important;
+            display: block;
+            width: 100%;
+            float: left;
+            clear: left;
+            border-bottom: 2px solid #f0f3f7;
+            @include flex-wrap(wrap);
+        }
+        li:last-child {
+            border-bottom: 0;
+        }
+        @media (min-width: break($m)) {
+            h3 {
+                @include flex(100%);
+                text-align: center;
+                margin-bottom: $padding*2;
+            }
+            li {
+                @include flex(0 0 calc(20% - 20px));
+                @include flex-direction(column);
+                border-bottom: 0;
+                a {
+                    width: 100%;
+                    min-height: 140px;
+                    margin-bottom: $padding;
+                    line-height: 18px;
+                }
+                div {
+                    float: left;
+                    a {
+                        min-height: auto;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.category {
+    .blog-post-block {
+        margin-bottom: ($padding * 2);
+    }
+}

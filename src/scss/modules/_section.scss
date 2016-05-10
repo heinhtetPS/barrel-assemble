@@ -1,0 +1,178 @@
+.section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    @media (min-width: break($m)) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    h2 {
+        @extend %h2;
+        margin-bottom: 70px;
+        color: #fff;
+    }
+}
+
+.single .section {
+    h2 {
+        @extend %h2;
+        margin-bottom: 60px;
+        color: #fff;
+    }
+}
+
+.white-bg {
+    h1,
+    h2 {
+        color: $c-gray;
+    }
+}
+
+.section__headline {
+    @extend %h4;
+    line-height: 1em;
+}
+
+.section__sub-headline {
+    @extend %h5;
+}
+
+.section--alternate {
+    background-color: $c-light-gray;
+}
+
+.main-content .section--alternate:last-child {
+    margin-bottom: -40px;
+    @media (min-width: break($ml)) {
+        margin-bottom: -60px;
+    }
+}
+
+.section--callout {
+    padding: ($padding*3) 0;
+    @include flexbox-display-flex;
+    @include flex-align-content(center);
+    @include flex-align-items(center);
+    @include flex-justify-content(center);
+    min-height: 450px;
+    .container {
+        @include flexbox-display-flex;
+        @include flex-align-content(center);
+        @include flex-align-items(center);
+        @include flex-justify-content(center);
+        @include flex-direction(column);
+    }
+    h1,
+    h3,
+    h2,
+    h4 p {
+        color: $c-white;
+    }
+    h2 {
+        margin-bottom: $padding*2;
+    }
+    h4 {
+        margin-bottom: 40px;
+    }
+    article {
+        width: 70%;
+        text-align: left;
+        margin-right: 10%;
+    }
+    article:last-child {
+        width: 40%;
+        min-width: 350px;
+        max-width: 400px;
+        margin-right: 0;
+    }
+    .block:last-child {
+        width: inherit;
+        min-width: inherit;
+        max-width: inherit;
+    }
+    .startup-lab-learn-more-cta {
+        border: 2px solid $c-white;
+        padding: 30px;
+        text-align: center;
+        min-height: 20em;
+        @include flexbox-display-flex;
+        @include flex-align-content(center);
+        @include flex-direction(column);
+        @include flex-justify-content(center);
+        h4 {
+            color: $c-white;
+            margin-bottom: 10px;
+        }
+        a {
+            color: $c-white;
+            margin-top: 20px;
+        }
+    }
+}
+
+.section--smaller-callout {
+    padding: ($padding*4) 0;
+    @include flexbox-display-flex;
+    @include flex-align-content(center);
+    @include flex-align-items(center);
+    @include flex-justify-content(center);
+    min-height: 250px;
+    margin-bottom: $padding;
+    .container {
+        @include flexbox-display-flex;
+        @include flex-align-content(center);
+        @include flex-align-items(center);
+        @include flex-justify-content(center);
+        @include flex-direction(column);
+    }
+    h1,
+    h3,
+    h2,
+    h4 p {
+        color: $c-gray;
+    }
+    h2,
+    h3 {
+        margin-bottom: $padding*2;
+    }
+    h4 {
+        margin-bottom: 40px;
+    }
+}
+
+.section--smaller-callout.overlay--blue {
+    h1,
+    h3,
+    h2,
+    h4 p {
+        color: $c-white;
+    }
+}
+
+.section--callout-center {
+    text-align: center;
+}
+
+.section--gray-background {
+    background-color: $c-light-gray;
+    h2 {
+        color: $c-gray;
+        margin-bottom: $padding * 3;
+    }
+    h3 {
+        color: $c-gray;
+        margin-bottom: 20px;
+        @media (min-width: break($s)) {
+            margin-bottom: 30px;
+        }
+        @media (min-width: break($m)) {
+            margin-bottom: 50px;
+        }
+    }
+    hr {
+        border: 1px solid #ccc;
+        @include opacity(.4);
+        width: 100%;
+        margin: ($padding*2) 0 50px 0;
+    }
+}
