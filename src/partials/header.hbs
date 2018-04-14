@@ -1,10 +1,10 @@
-    <header class="header" data-module-init="scroll-fix" data-animation="fade-in">
-      <h1 class="logo">
-        <a class="logo__link" href="./">
-          <img class="logo__image" src="{{site.logo}}" alt="{{site.logo_alt}}">
-          {{{site.title}}}
-        </a>
-      </h1>
-    </header>
 
-    <main class="main">
+<header class="header ">
+  <div class="header__secondary">
+    {{#if logo_secondary}}
+      <a href="/" class="header__secondary-logo">
+        <img data-src="{{ logo_secondary }}" class="header__secondary-image">
+      </a>
+    {{/if}}
+  </div>
+</header>

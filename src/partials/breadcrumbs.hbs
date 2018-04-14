@@ -1,0 +1,11 @@
+<ul class="breadcrumbs{{#if step}} breadcrumbs--activate-{{step}}-item{{/if}} js-breadcrumbs" data-module-init="breadcrumbs" data-step="{{step}}" >
+  {{#each breadcrumbs}}
+    <li class="breadcrumbs__item js-breadcrumbs__item{{#if (compare (add @index 1) "<=" ../step)}} current{{/if}}">
+      {{#if (compare (add @index 1) "<=" ../step)}}
+        <a class="label breadcrumbs__link" href="{{link}}">{{title}}</a>
+      {{else}}
+        <span class="label breadcrumbs__link">{{title}}</span>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
