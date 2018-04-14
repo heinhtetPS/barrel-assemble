@@ -1,7 +1,6 @@
-var initializeModules = require( "./lib/init-modules.js" );
+import { ready } from 'lib/dom'
+import image from 'lib/image'
+import initializeModules from 'lib/init-modules'
 
-if ( document.readyState !== "loading" ) {
-	initializeModules();
-} else {
-	document.addEventListener( "DOMContentLoaded", initializeModules );
-}
+ready(initializeModules)
+ready(image)
