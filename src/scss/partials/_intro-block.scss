@@ -1,0 +1,30 @@
+.intro-block {
+  @include cell((
+    'xs': 2,
+    's': 6,
+    'sm': 6,
+    'm': 3
+  ));
+  margin-top: 50px;
+  margin-bottom: 65px;
+  z-index: 1;
+  @include breakpoint( 'm' ) {
+    margin: 0;
+  }
+}
+
+.intro-block__inner {
+  padding: 25px;
+  border-radius: 8.4px;
+  background-color: $c-white;
+  box-shadow: 0 2px 17px 0 rgba($c-purple3,0.5);
+}
+
+.intro-block__headline {
+  margin-bottom: 10px;
+  color: $c-purple3;
+  text-transform: uppercase;
+  @include breakpoint( 's' ) {
+    margin-bottom: 17px;
+  }
+}

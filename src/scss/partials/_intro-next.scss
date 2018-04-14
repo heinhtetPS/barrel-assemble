@@ -1,0 +1,16 @@
+.intro-next {
+	text-align: center;
+	@include breakpoint(m) {
+		width: 290px;
+		max-width: 25%;
+		text-align: left;
+	}
+}
+
+.intro-next__title {
+	margin-bottom: 35px;
+	color: $c-purple3;
+	@include breakpoint(m) {
+		margin-bottom: 45px;
+	}
+}

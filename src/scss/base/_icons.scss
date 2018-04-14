@@ -1,0 +1,44 @@
+/* Icon font */
+$font-icon: "spq-icons";
+$icon-check: "\e900";
+$icon-close: "\e901";
+$icon-arrow-long: "\e910";
+$icon-replay: "\e902";
+
+@font-face {
+  font-family: $font-icon;
+  src:  url('../fonts/spq-icons.eot?a7lzq8');
+  src:  url('../fonts/spq-icons.eot?a7lzq8#iefix') format('embedded-opentype'),
+    url('../fonts/spq-icons.ttf?a7lzq8') format('truetype'),
+    url('../fonts/spq-icons.woff?a7lzq8') format('woff'),
+    url('../fonts/spq-icons.svg?a7lzq8#spq-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"], .font-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: $font-icon !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-check:before {
+  content: $icon-check;
+}
+.icon-close:before {
+  content: $icon-close;
+}
+.icon-arrow-long:before {
+  content: $icon-arrow-long;
+}
+.icon-replay:before {
+  content: $icon-replay;
+}

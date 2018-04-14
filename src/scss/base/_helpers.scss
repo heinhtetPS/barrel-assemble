@@ -1,0 +1,266 @@
+// Mixins
+
+@mixin rem($pixels: 15, $line-height: 1.4) {
+  font-size: ( $pixels / $font-base ) + rem;
+  line-height: ($line-height / $pixels);
+}
+
+@mixin ratio( $width: 1, $height: 1, $type: before) {
+  &:#{$type} {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: percentage( $height / $width);
+  }
+}
+
+// Mixins to create breakpoints
+
+@function em($value) {
+  @if ($value/1)==$value {
+    @if (unit($value)=='px') {
+      $unitless_value: $value/1px;
+      @return ($unitless_value/16)*1em;
+    }
+    @else if (unit($value)=='pt') {
+      $unitless_value: $value/1pt;
+      @return ($unitless_value/16)*1em;
+    }
+    @else {
+      @return ($value/16)*1em;
+    }
+  }
+  @warn "em(#{$value}) is not a number.";
+  @return null;
+}
+
+@function break($breakpoint, $min-width: true, $min-height: true) {
+  @if ($min-width==false) {
+    @return em($breakpoint - 1);
+  }
+  @else {
+    @return em($breakpoint);
+  }
+  @if ($min-height==false) {
+    @return em($breakpoint - 1);
+  }
+  @else {
+    @return em($breakpoint);
+  }
+  @warn "#{$breakpoint} in function break(#{$breakpoint}) does not exist.";
+  @return 'Check your break() declaration.';
+}
+
+// Mixins to create grid layout
+@mixin breakpoint( $name, $media: "min-width" ) {
+  @if ( $name == 'xs' and $media == 'min-width' ) {
+    @content;
+  } @else {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $name) {
+      $breakpoint-val: break(map-get($breakpoints, $name), $media == 'min-width');
+      // Prints a media query based on the value
+      @media ( #{$media}: #{$breakpoint-val} ) {
+        @content;
+      }
+    }
+      // If the key doesn't exist in the map
+    @else {
+      @error "Unfortunately, no breakpoint value could be retrieved for `#{$name}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+  }
+}
+@function decimal-round($number, $digits: 0, $mode: round) {
+  $n: 1;
+  // $number must be a number
+  @if type-of($number) != number {
+    @warn '#{ $number } is not a number.';
+    @return $number;
+  }
+  // $digits must be a unitless number
+  @if type-of($digits) != number {
+    @warn '#{ $digits } is not a number.';
+    @return $number;
+  } @else if not unitless($digits) {
+    @warn '#{ $digits } has a unit.';
+    @return $number;
+  }
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  } @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  } @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  } @else {
+    @warn '#{ $mode } is undefined keyword.';
+    @return $number;
+  }
+}
+
+@function decimal-ceil($number, $digits: 0) {
+  @return decimal-round($number, $digits, ceil);
+}
+
+@function decimal-floor($number, $digits: 0) {
+  @return decimal-round($number, $digits, floor);
+}
+
+@function grid-get-breakpoint( $breakpoint ) {
+  @return map-get($breakpoints, $breakpoint);
+}
+
+@function find-closest-breakpoint( $breakpoint, $map ) {
+  @if map-has-key( $map, $breakpoint ) {
+    @return map-get( $map, $breakpoint );
+  }
+  $found: 'xs';
+  @if map-has-key( $breakpoints, $breakpoint ) {
+    $break-size: map-get( $breakpoints, $breakpoint );
+    @each $name, $size in $map {
+      @if grid-get-breakpoint( $name ) <= $break-size  {
+        $found: $name;
+      }
+    }
+  }
+  @if ( map-has-key( $map, $found ) ) {
+    @return map-get( $map, $found );
+  } @else {
+    @return false;
+  }
+}
+
+@function grid-get-total-columns( $name ) {
+  @return find-closest-breakpoint( $name, $grid-col );
+}
+
+@function grid-get-gutter( $name ) {
+  @return find-closest-breakpoint(  )
+}
+
+@mixin col( $column, $breakpoint ) {
+  @extend %col-gutter;
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: break( map_get( $breakpoints, $breakpoint ) )) {
+      width: #{ percentage( decimal-floor( ( $column / grid-get-total-columns( $breakpoint) ), 4) ) };
+    }
+  }
+}
+
+@mixin cell( $map ) {
+  @each $breakpoint, $cols in $map {
+    @include col( $cols, $breakpoint );
+  }
+}
+
+@mixin transition($trans-elem: all, $trans-duration: 0.3s, $trans-type: ease) {
+  transition: $trans-elem $trans-duration $trans-type;
+}
+
+// Extends
+
+.fixed-full {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.absolute-full {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-contain {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-black {
+  background: $c-black;
+  color: $c-white;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.flex-single {
+  flex: 1 0 auto;
+}
+
+.flex-inline {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.flex-full-screen {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.square {
+  @include ratio;
+}
+
+.rectangle {
+  @include ratio(2, 1);
+}
+
+%enable-flickity {
+  content: 'flickity';
+  display: none;
+}
+
+%disable-flickity {
+  content: '';
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

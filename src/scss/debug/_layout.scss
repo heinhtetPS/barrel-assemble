@@ -1,0 +1,78 @@
+.is-debugging-layout {
+  position: relative;
+}
+
+.debug-layout {
+  @extend .transition-all;
+  @extend .fade-out;
+  @extend .fixed-full;
+  z-index: 500;
+  overflow: hidden;
+  pointer-events: none;
+
+  .is-debugging-layout & {
+    @extend .fade-in;
+  }
+}
+
+.debug-layout__button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.debug-layout__cols {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @include breakpoint( 's' ) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include breakpoint( 'sm' ) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include breakpoint( 'm' ) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include breakpoint( 'l' ) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+.debug-layout__col {
+  display: none;
+  background: rgba(#333, 0.2);
+  height: 100%;
+  flex: 1 0 auto;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  &:nth-child(-n+2) {
+    display: block;
+  }
+  @include breakpoint( 's' ) {
+    margin-left: 20px;
+    margin-right: 20px;
+    &:nth-child(-n+6) {
+      display: block;
+    }
+  }
+  @include breakpoint( 'm' ) {
+    display: block;
+  }
+}

@@ -1,0 +1,132 @@
+.intro-text {
+  @extend .flex-center;
+  flex: 1 1 auto;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 44px;
+  z-index: 1;
+  @include breakpoint( 'xl' ) {
+    margin-top: 77px;
+    margin-bottom: 115px;
+  }
+}
+
+.intro-text__container {
+  flex: 1 1 auto;
+}
+
+.intro-text--hero {
+  margin: 80px 0 210px;
+  @include breakpoint( 's' ) {
+    margin-top: 30px;
+    margin-bottom: 44px;
+  }
+  @include breakpoint( 'xl' ) {
+    margin-top: 77px;
+    margin-bottom: 115px;
+  }
+}
+
+.intro-text__wrapper {
+  margin: 0 auto;
+  @include breakpoint( 's' ) {
+    max-width: 520px;
+  }
+  @include breakpoint( 'xl' ) {
+    max-width: percentage(8/12);
+  }
+  .intro-text--hero & {
+    background: $c-white;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px 0 rgba($c-purple3, .5);
+    @include breakpoint( 'xl' ) {
+      max-width: calc(50% + 60px);
+    }
+  }
+}
+
+.intro-text__inner {
+  margin: 0 auto;
+  text-align: center;
+  .intro-text--hero & {
+    max-width: 580px;
+    padding: 32px 15px;
+
+    @include breakpoint( 'xl' ) {
+      width: calc(100% - 160px);
+      max-width: none;
+      padding: 43px 0 44px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.intro-text__tag {
+  margin-bottom: 5px;
+  @include breakpoint( 'xl' ) {
+    margin-bottom: 10px;
+  }
+}
+
+.intro-text__title {
+  margin-bottom: 24px;
+  color: $c-purple3;
+  @include breakpoint( 'xl' ) {
+    margin-bottom: 20px;
+  }
+  .intro-text--hero & {
+    margin-bottom: 10px;
+    @include breakpoint( 'xl' ) {
+      margin-bottom: 22px;
+    }
+  }
+}
+
+.intro-text__description {
+  max-width: 575px;
+  margin: 0 auto 32px;
+  color: $c-dblue3;
+  .intro-text--hero & {
+    @include breakpoint('xl') {
+      max-width: none;
+    }
+  }
+}
+
+.intro-text__button {
+  margin-top: 32px;
+  .video + & {
+    margin-top: 30px;
+    @include breakpoint( 'xl' ) {
+      margin-top: 55px;
+    }
+  }
+}
+
+.intro-text--video {
+  .intro-text__wrapper {
+    @extend .grid;
+    max-width: none;
+  }
+  .intro-text__inner {
+    @include cell((
+      'xs': 2,
+      's': 4
+    ));
+  }
+  .intro-text__description {
+    margin-bottom: 30px;
+  }
+  .intro-text__tag {
+    margin-bottom: 0;
+  }
+  .intro-text__title {
+    margin-bottom: 10px;
+    @include breakpoint( 'm' ) {
+      margin-bottom: 0;
+    }
+    @include breakpoint( 'l' ) {
+      margin-bottom: 10px;
+    }
+  }
+}

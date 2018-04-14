@@ -1,63 +1,37 @@
-@import "variables";
+@import 'variables';
 
-/* Base 
-** -----------------------------------------------------------------*/
-@import "base/normalize";
-@import "base/breakpoint";
-@import "base/transition";
-@import "base/base";
-@import "base/layout";
-@import "base/container";
-@import "base/background";
-@import "base/buttons";
-@import "base/typography";
+@import 'base/normalize';
+@import 'base/reset';
+@import 'base/helpers';
 
-/* Modules
-** -------------------------------------------------------------- */
-@import "modules/aspect";
-@import "modules/section";
-@import "modules/hero";
-@import "modules/javascript";
-@import "modules/animation";
-@import "modules/nav";
-@import "modules/header";
-@import "modules/social";
-@import "modules/carousel";
-@import "modules/footer";
-@import "modules/form";
-@import "modules/featured"; 
-@import "modules/content";
-@import "modules/article";
-@import "modules/about-snippet";
-@import "modules/form-modal";
-@import "modules/animation";
-@import "modules/feedRSS";
-@import "modules/blocks";
+@import 'base/typography';
+@import 'base/buttons';
+@import 'base/layout';
+@import 'base/icons';
+@import 'base/fonts';
 
-/* Partials
-** -------------------------------------------------------------- */
-@import "partials/event-recap";
-@import "partials/share-icons";
-@import "partials/contact";
-@import "partials/the-tags";
-@import "partials/now-trending";
-@import "partials/more-categories";
-@import "partials/side-share-icons";
-@import "partials/related-posts";
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/quiz';
+@import 'partials/result';
+@import 'partials/breadcrumbs';
+@import 'partials/video';
+@import 'partials/slider';
+@import 'partials/flickity';
+@import 'partials/intro-text';
+@import 'partials/modal';
+@import 'partials/parallax-image';
+@import 'partials/tip';
+@import 'partials/intro-block';
+@import 'partials/intro-text';
+@import 'partials/screen';
+@import 'partials/puzzle';
+@import 'partials/tree-split';
+@import 'partials/intro-next';
+@import 'partials/hotspot';
 
-/* Templates
-** -------------------------------------------------------------- */
-@import "templates/home";
-@import "templates/design-studio";
-@import "templates/resource-map";
-@import "templates/resource-category";
-@import "templates/resource-single";
-@import "templates/tribe-events-calendar";
-@import "templates/blog";
-@import "templates/blog-single";
-@import "templates/startup-lab";
-@import "templates/startup-directory";
-@import "templates/startup-single";
-@import "templates/tag";
-@import "templates/pride"; 
+// Debug layout
+@import 'debug/layout';
 
+// Scholastic Overrides
+@import 'partials/scholastic';

@@ -1,0 +1,25 @@
+$c-header-menu-item: #18628c;
+$c-header-gray: #d9d9d9;
+
+.header {
+	background-color: #FFF;
+  z-index: 100;
+  flex: 0 0 auto;
+}
+
+.header__secondary {
+  @extend .flex-center;
+  position: relative;
+  padding: 7px 0 12px;
+  background: $c-grey;
+  @include breakpoint('m') {
+    position: absolute;
+    z-index: 2;
+    padding-right: 15px;
+    border-bottom-right-radius: 46px;
+  }
+}
+
+.header__secondary-image {
+  width: 75px;
+}
