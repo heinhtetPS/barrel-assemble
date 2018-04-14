@@ -1,0 +1,34 @@
+<div class="tree-split">
+	<div class="tree-split__left">
+		{{#if img_plant_healthy_left}}
+			<figure class="tree-split__figure">
+				<img data-src="{{img_plant_healthy_left}}" alt="" class="tree-split__image">
+			</figure>
+		{{/if}}
+	</div>
+  <div class="tree-split__center js-draggable-zone">
+    {{#if img_interactive_hand_cursor}}
+      {{#if img_drag_me}}
+          <figure class="tree-split__figure-drag">
+            <img data-src="{{img_drag_me}}" alt="" class="tree-split__image-drag">
+          </figure>
+      {{/if}}
+      <div class="tree-split__guide js-tree-split-guide">
+          <figure class="tree-split__guide-figure">
+            <img data-src="{{img_interactive_hand_cursor}}" alt="" class="tree-split__guide-image">
+          </figure>
+      </div>
+    {{/if}}
+    <div class="tree-split__line"></div>
+    <div class="tree-split__center-zone js-drag-line">
+      <label for="drag" class="tree-split__center-drag js-drag-item"></label>
+    </div>
+  </div>
+	<div class="tree-split__right">
+		{{#if img_plant_healthy_right}}
+			<figure class="tree-split__figure">
+				<img data-src="{{img_plant_healthy_right}}" alt="" class="tree-split__image">
+			</figure>
+		{{/if}}
+	</div>
+</div>

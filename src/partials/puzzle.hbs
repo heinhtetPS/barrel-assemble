@@ -1,0 +1,23 @@
+<div class="puzzle{{#if class}} {{class}}{{/if}}"{{#if id}} id="{{ id }}"{{/if}}>
+  <div class="puzzle__wrapper">
+    <div class="puzzle__header">
+      {{#if title}}
+        <h4 class="sub-heading puzzle__tile">{{ title }}</h4>
+      {{/if}}
+      {{#if description}}
+        <p class="p puzzle__description">{{ description }}</p>
+      {{/if}}
+    </div>
+    {{#if images}}
+      <div class="puzzle__list-image">
+        {{#each images}}
+          <div class="puzzle__item" data-droppable="{{ add @index 1 }}">
+            <figure class="puzzle__figure js-puzzle-drag">
+              <img data-src="{{image}}" class="puzzle__image js-puzzle-image"  alt="">
+            </figure>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "intro_text": {
+    "tag": "Video",
+    "title": "BLOOM! POWER",
+    "description": "Ever wondered how long plants have been here? And what role they play in the world? Watch the video below to find out how plants power our world!"
+  },
+  "video": {
+    "video_background_image" : "https://placeimg.com/840/470/any",
+    "video_iframe_link" : "https://www.youtube.com/embed/wgrKWCIRuaU"
+  }
+}

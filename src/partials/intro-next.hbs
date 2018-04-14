@@ -1,0 +1,10 @@
+<div class="intro-next" id="{{ id }}">
+  <div class="intro-next__inner">
+    {{#if title}}
+      <h3 class="main-heading intro-next__title">{{ title }}</h3>
+    {{/if}}
+    {{#if button_text}}
+      <a href="{{ site.root }}{{ button_link }}" class="label button{{#if button_class }} {{ button_class }}{{/if}}{{#if nextStep}} js-next-step{{/if}}">{{ button_text }}</a>
+    {{/if}}
+  </div>
+</div>

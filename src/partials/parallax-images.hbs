@@ -1,0 +1,7 @@
+<div class="parallax-images">
+  {{#each parallax_images}}
+    <figure class="parallax-image{{#if parallax_class}} {{ parallax_class }}{{/if}}">
+      <img data-src="{{ parallax_image }}" alt="" class="{{#if parallax_image_class}} {{ parallax_image_class }}{{/if}} parallax-image__image">
+    </figure>
+  {{/each}}
+</div>

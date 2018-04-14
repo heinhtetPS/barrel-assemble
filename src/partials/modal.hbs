@@ -1,0 +1,52 @@
+{{#if content}}
+  <div class="modal modal--fixed" id="modal-{{ id }}" {{#if module_init}}data-module-init="modal"{{/if}}>
+    <div class="modal__layout js-modal-layout"></div>
+    <div class="modal__main">
+      <button class="modal__close-button js-close-modal">
+        <span></span>
+        <span></span>
+      </button>
+      {{#if content}}
+        <div class="modal__slider modal__slider--image{{#if (compare (length content) ">" 1 ) }} modal__slider--{{../id}}{{/if}}" >
+          {{#each content}}
+            <div class="modal__slider-item" data-slider="slider-{{id}}">
+              {{#if image}}
+                <figure class="modal__image">
+                  <img class="image-cover modal__image-img" data-src="{{ image }}" alt="">
+                </figure>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+      <div class="modal__content">
+        {{#if content}}
+          <div class="modal__slider-wrapper"{{#if (compare (length content) ">" 1 ) }} data-module-init="slider"{{/if}}>
+            <div class="modal__slider modal__slider--content{{#if (compare (length content) ">" 1 ) }} js-modal__slider--content{{/if}}"{{#if (compare (length content) ">" 1 ) }} data-sync=".modal__slider--{{../id}}"{{/if}}>
+              {{#each content}}
+                <div class="modal__slider-item" data-item-slider="slider-item--{{ content_id }}">
+                  {{#if headline }}
+                    <div class="modal__header">
+                      {{#if tag}}
+                        <div class="modal__tag"><span class="modal__tag-content">{{ tag }}</span></div>
+                      {{/if}}
+                      <h4 class="sub-heading modal__headline">{{ headline }}</h4>
+                    </div>
+                  {{/if}}
+                  <div class="p modal__description">{{ description }}</div>
+                  {{#if button}}
+                    <div class="modal__footer">
+                      <button class="label modal__button"{{#if (eq button.type 'slider') }} data-slider="slider-item--{{button.action }}"{{else}} data-modal="#modal-{{ button.action }}"{{/if}}>
+                        {{ button.text }}<span class="modal__button-arrow"></span>
+                      </button>
+                    </div>
+                  {{/if}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+{{/if}}

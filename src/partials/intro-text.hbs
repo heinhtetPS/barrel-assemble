@@ -1,0 +1,27 @@
+<section class="intro-text {{ section_class }}">
+  <div class="container intro-text__container">
+    <div class="intro-text__wrapper">
+      <div class="intro-text__inner">
+        {{#if tag}}
+          <div class="label intro-text__tag">{{ tag }}</div>
+        {{/if}}
+        {{#if title}}
+          <h2 class="main-title intro-text__title">{{ title }}</h2>
+        {{/if}}
+        {{#if description}}
+          <p class="p-lead intro-text__description"> {{ description }}</p>
+        {{/if}}
+        {{#if video_id}}
+          {{> video }}
+        {{/if}}
+        {{#if buttons}}
+          <div class="intro-text__button">
+            {{#each buttons}}
+              <a href="{{ ../site.root }}{{ link }}" class="{{ class }} js-next-step">{{ text }}</a>
+            {{/each}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</section>

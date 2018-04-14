@@ -1,0 +1,20 @@
+<div class="video" data-module-init="video">
+  <div class="video__inner">
+    {{#if video_background_image }}
+      <figure class="absolute-full bg-cover video__figure">
+      	<img data-bg="true" data-src="{{video_background_image}}" alt="" class="video__image">
+      </figure>
+    {{/if}}
+    {{#if video_id}}
+      <div class="video__play"></div>
+      <video data-video-id="{{ video_id }}"
+        data-account="{{ video_account }}"
+        data-player="{{ video_player }}"
+        data-embed="default"
+        data-application-id
+        class="video-js absolute-full video__video" controls
+        controls></video>
+      <script src="//players.brightcove.net/{{ video_account }}/{{ video_player }}_default/index.min.js"></script>
+    {{/if}}
+  </div>
+</div>
