@@ -27,7 +27,7 @@ app.task( 'files:build', function() {
   return app.toStream( 'pages' )
     .pipe( app.renderFile() )
     .pipe( extname('.htm') )
-    .pipe( app.dest( 'dist/bloom/plantpower' ) );
+    .pipe( app.dest( 'dist/' ) );
 } );
 
 app.task('assets', function() {

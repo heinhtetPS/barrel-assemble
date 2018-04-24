@@ -164,17 +164,8 @@ Paragraph Medium
     @extend .p-lead;
   }
 }
-
-.quiz-answer {
-  @extend %heading;
-  @include rem(20, 25);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .red-block {
   @extend .transition-all;
-  @extend %circle;
   z-index: 20;
   width: 55px;
   height: 55px;
@@ -188,8 +179,6 @@ Paragraph Medium
     height: 85px;
   }
   &:before {
-    @extend .transition-all;
-    @extend %circle;
     @extend .transition-all;
     content: '';
     width: 65px;

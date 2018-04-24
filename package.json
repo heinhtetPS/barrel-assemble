@@ -28,9 +28,9 @@
     "jscs": "jscs src/js/**/*.js src/js/*.js > jscs.js || true",
     "jshint:watch": "onchange './src/js/**/*.js' -- npm run jshint",
     "jshint": "jshint src/js/**/*.js src/js/*.js > jshint.js || true",
-    "css:compile": "node-sass src/scss/main.scss $npm_package_config_assetpath/css/main.css && node-sass src/scss/scholastic.scss $npm_package_config_assetpath/css/scholastic.css",
-    "css:prefix": "postcss --local-plugins -u autoprefixer -o $npm_package_config_assetpath/css/main.css $npm_package_config_assetpath/css/main.css && postcss --local-plugins -u autoprefixer -o $npm_package_config_assetpath/css/scholastic.css $npm_package_config_assetpath/css/scholastic.css",
-    "css:minify": "cleancss -o $npm_package_config_assetpath/css/main.min.css $npm_package_config_assetpath/css/main.css && cleancss -o $npm_package_config_assetpath/css/scholastic.min.css $npm_package_config_assetpath/css/scholastic.css",
+    "css:compile": "node-sass src/scss/main.scss $npm_package_config_assetpath/css/main.css",
+    "css:prefix": "postcss --local-plugins -u autoprefixer -o $npm_package_config_assetpath/css/main.css $npm_package_config_assetpath/css/main.css",
+    "css:minify": "cleancss -o $npm_package_config_assetpath/css/main.min.css $npm_package_config_assetpath/css/main.css",
     "css:build": "npm run css:compile && npm run css:prefix && npm run css:minify",
     "css:dev": "onchange './src/scss/**/*.scss' -- npm run css:build"
   },
