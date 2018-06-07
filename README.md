@@ -1,4 +1,4 @@
-# Takes2
+# Assemble Static Site Generator
 
 ## Table of Contents
 1. [Getting Started](#getting-started)
@@ -55,18 +55,6 @@ Compiles and prefixes your CSS using Libass, POSTCSS and Autoprefixer.
 
 #### `npm run css:dev`
 Runs a watch task on your CSS. On change events, runs `[css:build]`.
-
-#### `npm run jscs`
-Lints your javascript partials and writes a `jscs.js` file in the root of the project.
-
-#### `npm run jscs:watch`
-Runs a watch task on your javascripts. On change events, runs `[jscs]`.
-
-#### `npm run jshint`
-Analyze your javascript partials and writes a `jshint.js` file in the root of the project.
-
-#### `npm run jshint:watch`
-Runs a watch task on your javascripts. On change events, runs `[jshint]`.
 
 #### `npm run assemble:build`
 Generate html files in `dist/` from assemble files (.hbs) in `src/`.
